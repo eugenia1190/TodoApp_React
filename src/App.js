@@ -2,14 +2,26 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+const cat = 'Boris';
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+        <p style ={{
+          color: 'pink'
+        }}>
+          {cat}
         </p>
+        <p> {123} </p>
+        <p> {15 + 15} </p>
+        <p> {15 && cat} </p>
+        <p> {cat ? 'cat is true': 'cat is false'} </p>
+        <p> {null} </p>
+        <p> {undefined} </p>
+        <p> {false} </p>
+        <p> {true} </p>
         <a
           className="App-link"
           href="https://reactjs.org"
