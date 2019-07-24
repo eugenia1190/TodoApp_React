@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {count, length} from './numbers.js';
 
 const cat = 'Boris';
 
@@ -22,6 +23,7 @@ function App() {
         <p> {undefined} </p>
         <p> {false} </p>
         <p> {true} </p>
+        <p> {"count * length = " + count + length} </p>
         <a
           className="App-link"
           href="https://reactjs.org"
