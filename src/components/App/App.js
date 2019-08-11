@@ -2,7 +2,7 @@ import React from 'react';
 import ItemList from '../ItemList/ItemList';
 import InputItem from '../InputItem/InputItem';
 import Footer from '../Footer/Footer';
-import './App.css';
+import styles from './App.module.css';
 
 const todoItem = 'Написать новое приложение';
 
@@ -22,11 +22,12 @@ const App = () => {
 
 
 	return (
-	<div className="wrap">
-		<h1 className="wrap__title">Все мои задачи:</h1>
+	<div className={styles.wrap}>
+		<h1 className={styles.title}>Все мои задачи:</h1>
 		<InputItem />
 		<ItemList items={items} />
 		<Footer count={3} />
 	</div>);
 }
+
 export default App;
