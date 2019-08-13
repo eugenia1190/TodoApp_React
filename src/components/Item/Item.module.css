@@ -1,0 +1,12 @@
+.item
+{
+	color: #000000;
+	font-weight: bold;
+}
+
+.done
+{
+	color: #808080;
+	font-weight: normal;
+	text-decoration: line-through;
+}

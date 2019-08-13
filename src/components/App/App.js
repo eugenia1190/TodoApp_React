@@ -9,13 +9,16 @@ const todoItem = 'Написать новое приложение';
 const App = () => {
 	const items = [
 		{
-			value: 'Написать новое приложение'
+			value: 'Написать новое приложение',
+			isDone: false
 		},
 		{
-			value: 'прописать props-ы'
+			value: 'прописать props-ы',
+			isDone: true
 		},
 		{
-			value: 'доделать остальные дела'
+			value: 'доделать остальные дела',
+			isDone: false
 		}
 		
 	];
