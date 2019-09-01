@@ -1,12 +1,13 @@
 .item
 {
+	display: flex;
+	align-items: center;
+	width: 80%;
 	color: #000;
-	font-weight: bold;
 }
 
 .done
 {
-	color: #808080;
-	font-weight: normal;
+	color: #757575;
 	text-decoration: line-through;
 }

@@ -1,13 +1,27 @@
+body
+{
+	margin:0;
+	padding: 50px 0 0 0;
+	background-color: #DCDCDC;
+
+}
+
+
 .wrap
 {
 	display: block;
-	margin: auto;
-	width: 300px;
-	
+	margin: 0 auto;
+	padding: 35px;
+	width: 500px;
+	border: 1px solid #FFF;
+	box-shadow: 1px 0px 39px -12px #757575;
+	font-family: Arial;
+	background-color: #FFF;
 }
 
 .title
 {
+	color: #f50057;
+	text-align: center;
 	font-family: Arial;
-	color: red;
 }
