@@ -6,13 +6,13 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
 
 
-const Item = ({ value, isDone, onClickDone }) => (<span className={
+const Item = ({ value, isDone, id, onClickDone }) => (<span className={
 	classnames({
 		[styles.item]: true,
 		[styles.done]: isDone
-	})}> <Checkbox 
+	})}><Checkbox
 		checked= {isDone}
-		onClick= {() => onClickDone(isDone)}
+		onClick= {() => onClickDone(id)}
 		/> {value} <div className={styles.delete}><IconButton>
           <DeleteIcon fontSize="small" />
         </IconButton></div></span>);
