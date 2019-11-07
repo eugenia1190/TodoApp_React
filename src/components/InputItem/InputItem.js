@@ -43,7 +43,7 @@ class InputItem extends React.Component {
 			    	margin="dense"
 			    	fullWidth
 			    	value={this.state.inputValue}
-			    	onChange={event => this.setState({ inputValue: event.target.value })}
+			    	onChange={event => this.setState({ inputValue: event.target.value.toUpperCase() })}
 			    />
 			    <Button
 			    	variant='contained'
