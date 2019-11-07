@@ -5,6 +5,8 @@ import Button from '@material-ui/core/Button';
 class InputItem extends React.Component {
 	state = {
 		inputValue: '',
+		labelValue: "Добавить задачу",
+		noValue: false
 	};
 
 	onButtonClick = () => {
@@ -12,7 +14,21 @@ class InputItem extends React.Component {
 			inputValue: ''
 		});
 
+		if ( this.state.inputValue === ''){
+			this.setState ({
+			labelValue: "Вы не ввели значение!",
+			noValue: true
+			
+		});
+		} else {
+			this.setState ({
+			labelValue: "Добавить задачу",
+			noValue: false
+			
+		});
+
 		this.props.onClickAdd(this.state.inputValue);
+		}
 	}
 
 	render () {
@@ -21,8 +37,9 @@ class InputItem extends React.Component {
 		return (
 			<div>
 				<TextField
+			    	error={this.state.noValue}
 			    	id="standard-dense"
-			    	label="Добавить задачу"
+			    	label={this.state.labelValue}
 			    	margin="dense"
 			    	fullWidth
 			    	value={this.state.inputValue}
