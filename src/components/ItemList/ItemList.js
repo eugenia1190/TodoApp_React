@@ -15,4 +15,11 @@ const ItemList = ({ items, onClickDone, onClickDelete }) => (
 		</li>)}
 	</ul>);
 
+ItemList.defaultProps = {
+	items: [
+		{
+			value: "Несуществующая задача"
+		}]
+};
+
 export default ItemList;
