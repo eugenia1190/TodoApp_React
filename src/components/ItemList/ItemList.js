@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Item from '../Item/Item';
 import styles from './ItemList.module.css';
 
@@ -21,5 +22,13 @@ ItemList.defaultProps = {
 			value: "Несуществующая задача"
 		}]
 };
+
+ItemList.propTypes = {
+	items: PropTypes.array.isRequired,
+	onClickDone: PropTypes.func,
+	onClickDelete: PropTypes.func
+};
+
+
 
 export default ItemList;

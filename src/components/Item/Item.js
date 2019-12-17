@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './Item.module.css';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -23,6 +24,14 @@ const Item = ({ value, isDone, id, onClickDone, onClickDelete }) => (
 
 Item.defaultProps = {
     isDone: false
+};
+
+Item.propTypes = {
+	value: PropTypes.string.isRequired,
+	isDone: PropTypes.bool.isRequired,
+	id: PropTypes.number.isRequired,
+	onClickDone: PropTypes.func,
+	onClickDelete: PropTypes.func
 };
 
 export default Item;
