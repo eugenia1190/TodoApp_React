@@ -32,8 +32,7 @@ class InputItem extends React.Component {
 	}
 
 	render () {
-		const { onClickAdd } = this.props;
-
+		
 		return (
 			<div>
 				<TextField
