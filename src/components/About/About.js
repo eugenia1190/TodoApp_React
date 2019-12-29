@@ -1,6 +1,7 @@
 import React from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Octokit from '@octokit/rest';
+import styles from './About.module.css';
 
 const octokit = new Octokit();
 
@@ -24,11 +25,12 @@ class About extends React.Component {
 		return (
 			<div>
 				<h1>{ isLoading  ? <CircularProgress /> : 'Обо мне' }</h1>
-				<div>{!isLoading && <ol>
-					{repoList.map(repo => (<li key={repo.id}>
-						{repo.name}
-					</li>))}
-				</ol>} 
+				<div>{!isLoading &&
+					<ol>
+						{repoList.map(repo => (<li key={repo.id}><a href={repo.html_url}  className={styles.link}>
+							{repo.name}
+						</a></li>))}
+					</ol>} 
 				</div>
 			</div>
 
