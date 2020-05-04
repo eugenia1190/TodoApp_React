@@ -24,7 +24,7 @@ class About extends React.Component {
 		fetch(url)
 			.then (res => res.json())
 			.then (json => {
-				if (json.message == 'Not Found') {
+				if (json.message === 'Not Found') {
 					this.setState ({
 						notFound: true,
 						isLoading: false
