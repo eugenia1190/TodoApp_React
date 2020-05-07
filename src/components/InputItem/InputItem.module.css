@@ -1,0 +1,30 @@
+.wrap
+{
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.input
+{
+	border: 1px solid #CCC;
+	border-radius: 29px;
+	width: 90%;
+	padding: 12px;
+}
+
+.input:focus
+{
+	outline:0;
+}
+
+.error
+{
+	border-color: red;
+}
+
+.addicon
+{
+	width: 36px;
+	height: 36px;
+}

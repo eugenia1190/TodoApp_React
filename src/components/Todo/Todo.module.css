@@ -1,0 +1,43 @@
+.wrap
+{
+	display: block;
+	width: 700px;
+	
+	padding: 30px;
+	border: 1px solid #FFF;
+	border-radius: 9px;
+	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+	background-color: #FFF;
+}
+
+.menu
+{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.btn
+{
+	background-color: #FFF;
+	font-size: 12px;
+	color: #000;
+	border-radius: 23px;
+	height: 19px;
+	border: none; 
+	outline: none;
+	cursor: pointer;
+}
+
+.btn:hover
+{
+	background-color: #DCDCDC;
+	transition: background  0.3s ease-in-out;
+
+}
+
+.count
+{
+	color: #356eff;
+	font-weight: bold;
+}

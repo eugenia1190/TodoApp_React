@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './Item.module.css';
 import Checkbox from '@material-ui/core/Checkbox';
-import DeleteIcon from '@material-ui/icons/Delete';
+import DeleteIcon from '../../img/delete.png';
 import IconButton from '@material-ui/core/IconButton';
 
 class Item extends React.Component {
@@ -21,7 +21,7 @@ class Item extends React.Component {
 		{value}
 		<div className={styles.delete}>
 			<IconButton onClick= {() => onClickDelete(id)}>
-          		<DeleteIcon fontSize="small" />
+          		<img src = {DeleteIcon} alt = 'delete' className={styles.deleteicon}  />
         	</IconButton>
         </div>
     </span>);

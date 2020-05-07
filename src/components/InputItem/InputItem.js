@@ -1,6 +1,11 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import classnames from 'classnames';
+import styles from './InputItem.module.css';
+import IconButton from '@material-ui/core/IconButton';
+
+import AddIcon from '../../img/add.png';
 
 class InputItem extends React.Component {
 	state = {
@@ -32,26 +37,19 @@ class InputItem extends React.Component {
 	}
 
 	render () {
-		
+
 		return (
-			<div>
-				<TextField
-			    	error={this.state.noValue}
-			    	id="standard-dense"
-			    	label={this.state.labelValue}
-			    	margin="dense"
-			    	fullWidth
-			    	value={this.state.inputValue}
-			    	onChange={event => this.setState({ inputValue: event.target.value.toUpperCase() })}
-			    />
-			    <Button
-			    	variant='contained'
-			    	color='primary'
-			    	fullWidth
-			    	onClick={ this.onButtonClick }
-			    >
-			    	Добавить
-			    </Button>	
+			<div className = {styles.wrap}>
+				<input 
+					className = {
+						classnames({
+							[styles.input]: true,
+							[styles.error]: this.state.noValue
+						})}
+					placeholder={this.state.labelValue}
+					value={this.state.inputValue}
+					onChange={event => this.setState({ inputValue: event.target.value })}/>
+				<div><img src = {AddIcon} alt = 'add' className={styles.addicon} onClick={ this.onButtonClick } /></div>
 			</div>);
 	}
 }

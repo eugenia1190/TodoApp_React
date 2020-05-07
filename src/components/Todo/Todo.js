@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 import Header from '../Header/Header';
 import ItemList from '../ItemList/ItemList';
 import InputItem from '../InputItem/InputItem';
-import Footer from '../Footer/Footer';
+import styles from './Todo.module.css';
 
 const Todo = () => {
 	const initialState = {
@@ -73,15 +73,22 @@ const Todo = () => {
 	
 		
 	return (
-		<div>
-			<Header />
-			<InputItem onClickAdd={onClickAdd} />
+		<div className = {styles.wrap} >
+			<div className = {styles.menu}>
+				<Header />
+				<div>
+					<button className = {styles.btn} >Завершенные <span className = {styles.count}>{count}</span></button>
+					<button className = {styles.btn} >Незавершенные <span className = {styles.count}>{count}</span></button>
+					<button className = {styles.btn} >Все</button>
+				</div>
+			</div>
+
 			<ItemList 
 				items= {items}
 				onClickDone={onClickDone}
 				onClickDelete ={onClickDelete}
 			/> 
-			<Footer count= {count} />
+			<InputItem onClickAdd={onClickAdd} />
 		</div>
 	);
 }
