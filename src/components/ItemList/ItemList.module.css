@@ -1,12 +1,14 @@
 .itemlist
 {
-	margin-left: 0;
+    margin-left: 0;
     padding: 0 0 0 0;
 }
 
 .item
 {
-	display: flex;
-	list-style-type: none;
-	padding: 0 0 8px 0;
+    display: flex;
+
+    padding: 0 0 8px 0;
+
+    list-style-type: none;
 }

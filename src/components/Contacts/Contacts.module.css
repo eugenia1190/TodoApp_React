@@ -1,48 +1,56 @@
 .wrap
 {
-	display: flex;
-	width: 700px;
-	padding: 12px;
-	margin: 0 0 14px 0;
-	border: 1px solid #FFF;
-	border-radius: 9px;
-	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
-	background-color: #FFF;
+    display: flex;
+
+    width: 700px;
+    margin: 0 0 14px 0;
+    padding: 12px;
+
+    border: 1px solid #fff;
+    border-radius: 9px;
+    background-color: #fff;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .25);
 }
 
 .avatar
 {
-	display: flex;
-	width: auto;
-	height: 176px;
-	border-radius: 9px;
-	padding: 0 40px  0 0;
+    display: flex;
+
+    width: auto;
+    height: 176px;
+    padding: 0 40px  0 0;
+
+    border-radius: 9px;
 }
 
 .title
 {
-	font-size: 28px;
-	font-weight: bold;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .socials
 {
-	display: flex;
-	align-items: center;
-	font-size: 12px;
-	line-height: 115%;
-	color: #999;
+    font-size: 12px;
+    line-height: 115%;
+
+    display: flex;
+
+    color: #999;
+
+    align-items: center;
 }
 
 .icon
 {
-	width: 16px;
-	height: 16px;
-	padding: 0 4px  0 0;
+    width: 16px;
+    height: 16px;
+    padding: 0 4px  0 0;
 }
 
 .link
 {
-	color: #999;
-	text-decoration: none;
+    text-decoration: none;
+
+    color: #999;
 }

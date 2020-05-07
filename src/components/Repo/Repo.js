@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Repo.module.css';
-
+import RepoItem from '../RepoItem/RepoItem.js';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Octokit from '@octokit/rest';
 
@@ -53,7 +53,12 @@ class Repo extends React.Component {
 						<ol>
 							{repoList.map(repo => (
 								<li key={repo.id}>
-									<a href={repo.html_url} className = {styles.link}>{repo.name}</a>
+									<RepoItem 
+										value = {repo.name}
+										href = {repo.html_url} 
+										language = {repo.language}
+										update = {repo.updated_at}
+									/>
 								</li>
 							))}
 						</ol> 

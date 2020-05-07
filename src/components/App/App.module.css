@@ -1,49 +1,58 @@
 body
 {
-	margin: 0;
-	padding: 90px 0 0 0;
-	background-color: #F1EFEF;
-	font-family: Roboto, Arial, sans-serif;
+    font-family: Roboto, Arial, sans-serif;
+
+    margin: 0;
+    padding: 90px 0 0 0;
+
+    background-color: #f1efef;
 }
 
 .wrap
 {
-	display: flex;
-	justify-content: center;
+    display: flex;
+
+    justify-content: center;
 }
 
 .wrapper
 {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	width: 700px;
+    display: flex;
+    flex-direction: column;
+
+    width: 700px;
+
+    align-items: center;
+    justify-content: center;
 }
 
 .link
 {
-	color: black;
-	text-decoration: none;
+    text-decoration: none;
+
+    color: black;
 }
 
-.btn 
+.btn
 {
-	font-size: 16px;
-	color: #000;
-	border-radius: 37px;
-	width: 128px;
-	height: 44px;
-	border: none; 
-	outline: none;
-	cursor: pointer;
+    font-size: 16px;
+
+    width: 128px;
+    height: 44px;
+
+    cursor: pointer;
+
+    color: #000;
+    border: none;
+    border-radius: 37px;
+    outline: none;
 }
 
 .btn:hover
 {
-	background-color: #DCDCDC;
-	transition: background  0.3s ease-in-out;
+    transition: background  .3s ease-in-out;
 
+    background-color: #dcdcdc;
 }
 
 /*.btn-active
@@ -56,8 +65,10 @@ body
 
 .sidebar
 {
-	display: flex;
-	justify-content: center;
-	width: 100%;
-	padding: 0 30px 24px 30px; 
+    display: flex;
+
+    width: 100%;
+    padding: 0 30px 24px 30px;
+
+    justify-content: center;
 }
