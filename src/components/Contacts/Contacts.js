@@ -19,7 +19,6 @@ class Contacts extends React.Component {
 					bio: json.bio,
 					avatar: json.avatar_url
 				});
-				console.log(json);
 			});
 	}
 

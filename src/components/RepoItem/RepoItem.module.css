@@ -1,5 +1,9 @@
 .wrap
 {
+    margin: 0 0 8px 0;
+    padding: 6px 12px 6px 12px;
+    height: 54px;
+
     box-sizing: border-box;
 
     border: 1px solid #ccc;
@@ -8,9 +12,21 @@
 
 .link
 {
+    font-size: 14px;
+	line-height: 16px;
+
+	display: block;
+	
+	margin: 0 0 8px 0;
+
     text-decoration: none;
 
     color: #000;
+}
+
+.link:hover
+{
+	color: #999;
 }
 
 .info
@@ -20,5 +36,43 @@
 
     display: flex;
 
+    width: 35%;
+
     color: #999;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.language
+{
+	display: flex;
+	
+	width: 22%;
+
+	align-items: center;
+	justify-content: space-between;
+}
+
+.circle
+{
+	width: 10px;
+	height: 10px;
+	
+	border-radius: 50%;
+}
+
+.html
+{
+	background-color: #e34c26;
+}
+
+.css
+{
+	background-color: #563d7c;	
+}
+
+.js
+{
+	background-color: #f1e05a;	
 }

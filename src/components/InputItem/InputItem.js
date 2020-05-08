@@ -51,6 +51,4 @@ class InputItem extends React.Component {
 	}
 }
 
-
-
 export default InputItem;

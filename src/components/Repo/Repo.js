@@ -10,34 +10,27 @@ class Repo extends React.Component {
 	
 	state = {
 		isLoading: true,
+		notFound: false,
 	}
 
 	componentDidMount() {
 		const user = 'eugenia1190';
-		const url = 'https://api.github.com/users/'+ user;
 
 		octokit.repos.listForUser({
 			username: user
-		}).then(({ data }) => {this.setState({
-			repoList: data,
-			isLoading: false
-		})});
-
-		fetch(url)
-			.then (res => res.json())
-			.then (json => {
-				if (json.message === 'Not Found') {
-					this.setState ({
-						notFound: true,
-						isLoading: false
-					})
-				} else {
-					this.setState({
-						bio: json.bio,
-						avatar: json.avatar_url
-					})
-				}});
-
+		})
+		.then(({ data }) => {
+				this.setState({
+				repoList: data,
+				isLoading: false
+			})
+		})
+		.catch(() => {
+			this.setState({ 
+				isLoading: false,
+				notFound: true, 
+			})
+		})
 	}
 
 	render() {
@@ -46,11 +39,12 @@ class Repo extends React.Component {
 		return (
 			<div className = {styles.wrap}>
 				<h2 className = {styles.title}>Репозитории на <a href='https://github.com/' className = {styles.link}>github.com</a></h2>
-				<div>
+				<div className = {styles.container}>
+					{isLoading && !notFound && <div className = {styles.preloader}><CircularProgress /></div>}
 					{!isLoading && notFound && <div>Информация о пользователе не доступна</div>}
 					{!isLoading && !notFound &&
 					<div>
-						<ol>
+						<ul className = {styles.list}>
 							{repoList.map(repo => (
 								<li key={repo.id}>
 									<RepoItem 
@@ -61,7 +55,7 @@ class Repo extends React.Component {
 									/>
 								</li>
 							))}
-						</ol> 
+						</ul> 
 					</div>} 
 				</div>
 			</div>
