@@ -11,18 +11,21 @@ const Todo = () => {
 			{
 				value: 'Написать новое приложение',
 				isDone: true,
+				isClicked: false,
 				id: 1,
 
 			},
 			{
 				value: 'прописать props-ы',
 				isDone: false,
+				isClicked: false,
 				id: 2,
 
 			},
 			{
 				value: 'доделать остальные дела',
 				isDone: false,
+				isClicked: false,
 				id: 3,
 
 			}
@@ -36,6 +39,24 @@ const Todo = () => {
 	useEffect(() => {console.log('componentDidMount')}, []);
 	useEffect(() => {console.log('componentDidUpdate')}, [items]);
 	
+	const onClickItem = id => {
+		const newItemList = items.map(item => {
+			const newItem = { ...item};
+
+			newItem.isClicked =false;
+
+			if (item.id === id) {
+				newItem.isClicked = !item.isClicked;
+			};
+
+			return newItem;
+		});
+
+
+		setItems(newItemList);
+	}
+
+
 	const onClickDone = id => {
 		const newItemList = items.map(item => {
 			const newItem = { ...item};
@@ -63,6 +84,7 @@ const Todo = () => {
 			{
 				value,
 				isDone: false,
+				isClicked: false,
 				id: count + 1
 			}
 		];
@@ -85,6 +107,7 @@ const Todo = () => {
 
 			<ItemList 
 				items= {items}
+				onClickItem = {onClickItem}
 				onClickDone={onClickDone}
 				onClickDelete ={onClickDelete}
 			/> 

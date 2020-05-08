@@ -10,13 +10,15 @@ class Item extends React.Component {
 
 	render () {
 
-		const { value, isDone, id, onClickDone, onClickDelete } = this.props;
+		const { value, isClicked, isDone, id, onClickItem, onClickDone, onClickDelete } = this.props;
 
 		return (<span className= {
 		classnames({
 			[styles.item]: true,
-			[styles.done]: isDone
-	})}>
+			[styles.done]: isDone,
+			[styles.clicked]: isClicked,
+		})} 
+		onClick = {()=> onClickItem(id) }>
 		<Checkbox checked= {isDone} onClick= {() => onClickDone(id)} />
 		{value}
 		<div className={styles.delete}>
