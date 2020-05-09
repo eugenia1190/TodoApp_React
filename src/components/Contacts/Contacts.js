@@ -35,7 +35,7 @@ class Contacts extends React.Component {
 					<div>
 						<div className = {styles.socials} >
 							<img src = {mailIcon} alt = "mail" className = {styles.icon} />
-							<span>chet444@mail.ru</span>
+							<a href='mailto:>chet444@mail.ru' className = {styles.link}>chet444@mail.ru</a>
 						</div>
 						<div className = {styles.socials} >
 							<img src = {telegramIcon} alt = "telegram"  className = {styles.icon} />
