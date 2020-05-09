@@ -27,7 +27,8 @@ const Todo = () => {
 
 			}
 		],
-		count: 3
+		count: 3,
+		doneCount: 1,
 	};
 
 	const [items, setItems] = useState(initialState.items);
@@ -64,7 +65,6 @@ const Todo = () => {
 			{
 				value,
 				isDone: false,
-				isClicked: false,
 				id: count + 1
 			}
 		];
@@ -72,21 +72,23 @@ const Todo = () => {
 		setCount(count => count + 1);
 	}
 
-	
+	const itemsIsDone = items.filter(item => item.isDone === true);
+	const countIsDone =  items.filter(item => item.isDone === true).length;
 		
 	return (
 		<div className = {styles.wrap} >
 			<div className = {styles.menu}>
 				<Header />
 				<div>
-					<button className = {styles.btn} >Завершенные <span className = {styles.count}>{count}</span></button>
-					<button className = {styles.btn} >Незавершенные <span className = {styles.count}>{count}</span></button>
-					<button className = {styles.btn} >Все</button>
+					<button className = {styles.btn} >Завершенные <span className = {styles.count}>{countIsDone}</span></button>
+					<button className = {styles.btn} >Незавершенные <span className = {styles.count}>{count - countIsDone}</span></button>
+					<button className = {styles.btn} >Все <span className = {styles.count}>{count}</span></button>
 				</div>
 			</div>
 
 			<ItemList 
 				items= {items}
+				itemsIsDone={itemsIsDone}
 				onClickDone={onClickDone}
 				onClickDelete ={onClickDelete}
 			/> 
