@@ -33,6 +33,8 @@ class InputItem extends React.Component {
 		}
 	}
 
+	onClickEnter = (event) => { if (event.keyCode === 13) {this.onButtonClick()} };
+
 	render () {
 
 		return (
@@ -45,7 +47,8 @@ class InputItem extends React.Component {
 						})}
 					placeholder={this.state.labelValue}
 					value={this.state.inputValue}
-					onChange={event => this.setState({ inputValue: event.target.value })}/>
+					onChange={event => this.setState({ inputValue: event.target.value })}
+					onKeyUp={this.onClickEnter}/>
 				<div><img src = {AddIcon} alt = 'add' className={styles.addicon} onClick={ this.onButtonClick } /></div>
 			</div>);
 	}
