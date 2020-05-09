@@ -23,11 +23,15 @@
     text-decoration: none;
 
     color: #000;
+
+    cursor: pointer;
 }
 
 .link:hover
 {
-    color: #999;
+    text-decoration: underline;
+    
+    color: #356eff;
 }
 
 .list
@@ -38,17 +42,43 @@
     list-style-type: none; 
 }
 
-.container
+.content
 {
     height: 100%;
 }
 
-.preloader
+.norepo
 {
     display: flex;
-    
-    height: 85%;
-   
+    flex-direction: column;
+      
     align-items: center;
     justify-content: center;
 }
+
+.error
+{
+    width: 270px;
+    margin: 0 0 25px 0;
+}
+
+.subtitle
+{
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+
+    margin: 0 0 8px 0;
+}
+
+.text
+{
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+   
+    margin: 0; 
+
+    color: #999;
+}
+

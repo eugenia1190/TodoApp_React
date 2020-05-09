@@ -29,7 +29,6 @@ const RepoItem = ({href, value, language, update}) => (
 			<div>Updated on {transformDate(update)}</div>
 		</div>
 	</div>
-
 );
 
 export default RepoItem;
