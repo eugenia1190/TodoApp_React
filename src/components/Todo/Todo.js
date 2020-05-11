@@ -28,11 +28,12 @@ const Todo = () => {
 			}
 		],
 		count: 3,
-		doneCount: 1,
+		displayItems: 'all',
 	};
 
 	const [items, setItems] = useState(initialState.items);
 	const [count, setCount] = useState(initialState.count);
+	const [displayItems, setDisplayItems] = useState(initialState.displayItems);
 
 	useEffect(() => {console.log('componentDidMount')}, []);
 	useEffect(() => {console.log('componintDidUpdate')}, [items]);
@@ -73,6 +74,10 @@ const Todo = () => {
 	}
 
 	const itemsIsDone = items.filter(item => item.isDone === true);
+	const itemsIsNotDone = items.filter(item => item.isDone === false);
+	const itemsAll = items;
+	let selectedItems = (displayItems ==='isDone') ? itemsIsDone : (displayItems === 'isNotDone') ? itemsIsNotDone : itemsAll;		
+
 	const countIsDone =  items.filter(item => item.isDone === true).length;
 		
 	return (
@@ -80,15 +85,14 @@ const Todo = () => {
 			<div className = {styles.menu}>
 				<Header />
 				<div>
-					<button className = {styles.btn} >Завершенные <span className = {styles.count}>{countIsDone}</span></button>
-					<button className = {styles.btn} >Незавершенные <span className = {styles.count}>{count - countIsDone}</span></button>
-					<button className = {styles.btn} >Все <span className = {styles.count}>{count}</span></button>
+					<button className = {styles.btn} onClick = {() => setDisplayItems('isDone')} >Завершенные <span className = {styles.count}>{countIsDone}</span></button>
+					<button className = {styles.btn} onClick = {() => setDisplayItems('isNotDone')} >Незавершенные <span className = {styles.count}>{count - countIsDone}</span></button>
+					<button className = {styles.btn} onClick = {() => setDisplayItems('all')}>Все <span className = {styles.count}>{count}</span></button>
 				</div>
 			</div>
 
 			<ItemList 
-				items= {items}
-				itemsIsDone={itemsIsDone}
+				items= {selectedItems}
 				onClickDone={onClickDone}
 				onClickDelete ={onClickDelete}
 			/> 
