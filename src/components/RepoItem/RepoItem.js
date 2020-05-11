@@ -17,9 +17,9 @@ const transformDate = (prop) => {
 	return newDate;
 }
 
-const RepoItem = ({href, value, language, stargazers, forks, update}) => (
+const RepoItem = ({repoUrl, value, language, stargazers, forks, update}) => (
 	<div className = {styles.wrap}>
-		<a href={href} className = {styles.link}>{value}</a>
+		<a href={repoUrl} className = {styles.link}>{value}</a>
 		<div className = {styles.info}>
 			<div className = {styles.parameter}>
 				<div className = {
