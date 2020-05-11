@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Todo from '../Todo/Todo';
 import About from '../About/About';
 import styles from './App.module.css';
+import '../../fonts/fonts.css';
 
 
 
