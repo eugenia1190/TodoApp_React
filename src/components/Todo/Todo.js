@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 
 import Header from '../Header/Header';
 import ItemList from '../ItemList/ItemList';
@@ -7,37 +7,14 @@ import styles from './Todo.module.css';
 
 const Todo = () => {
 	const initialState = {
-		items: [
-			{
-				value: 'Написать новое приложение',
-				isDone: true,
-				id: 1,
-
-			},
-			{
-				value: 'прописать props-ы',
-				isDone: false,
-				id: 2,
-
-			},
-			{
-				value: 'доделать остальные дела',
-				isDone: false,
-				id: 3,
-
-			}
-		],
-		count: 3,
+		items: [],
+		count: 0,
 		displayItems: 'all',
 	};
 
 	const [items, setItems] = useState(initialState.items);
 	const [count, setCount] = useState(initialState.count);
 	const [displayItems, setDisplayItems] = useState(initialState.displayItems);
-
-	// useEffect(() => {console.log('componentDidMount')}, []);
-	// useEffect(() => {console.log('componintDidUpdate')}, [items]);
-	
 
 	const onClickDone = id => {
 		const newItemList = items.map(item => {
