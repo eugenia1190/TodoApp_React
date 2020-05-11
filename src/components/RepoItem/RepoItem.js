@@ -17,9 +17,20 @@ const transformDate = (prop) => {
 	return newDate;
 }
 
-const RepoItem = ({repoUrl, value, language, stargazers, forks, update}) => (
+const RepoItem = ({repoUrl, homepage, value, language, stargazers, forks, update}) => (
 	<div className = {styles.wrap}>
-		<a href={repoUrl} className = {styles.link}>{value}</a>
+		<div className={styles.title}>
+			<a href={repoUrl} className = {
+				classnames({
+					[styles.link]: true,
+					[styles.repo]: true,
+			})}>{value}</a>
+			{homepage && <a href={homepage} className = {
+				classnames({
+					[styles.link]: true,
+					[styles.demo]: true,
+			})}> Демо </a>}
+		</div>
 		<div className = {styles.info}>
 			<div className = {styles.parameter}>
 				<div className = {

@@ -10,24 +10,49 @@
     border-radius: 10px;
 }
 
+.title
+{
+	display: flex;
+
+	margin: 0 0 8px 0;
+}
+
 .link
 {
-    font-size: 14px;
-	line-height: 16px;
-
 	display: block;
 	
-	margin: 0 0 8px 0;
-
     text-decoration: none;
 
     color: #000;
 }
 
-.link:hover
+.repo
+{
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: bold;
+
+	margin: 0 5px 0 0;
+}
+
+.repo:hover
+{
+    text-decoration: underline;
+    
+    color: #356eff;
+}
+
+.demo
+{
+	font-size: 10px;
+	line-height: 14px;
+}
+
+.demo:hover
 {
 	color: #999;
 }
+
 
 .info
 {

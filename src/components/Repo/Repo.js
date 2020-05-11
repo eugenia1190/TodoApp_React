@@ -63,6 +63,7 @@ class Repo extends React.Component {
 								<li key={repo.id}>
 									<RepoItem 
 										value = {repo.name}
+										homepage = {repo.homepage}
 										repoUrl = {repo.html_url} 
 										language = {repo.language}
 										stargazers = {repo.stargazers_count}
