@@ -65,7 +65,9 @@ class Repo extends React.Component {
 										value = {repo.name}
 										href = {repo.html_url} 
 										language = {repo.language}
-										update = {repo.updated_at}
+										stargazers = {repo.stargazers_count}
+										forks = {repo.forks_count}
+										update = {repo.updated_at}										
 									/>
 								</li>
 							))}

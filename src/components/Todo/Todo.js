@@ -35,8 +35,8 @@ const Todo = () => {
 	const [count, setCount] = useState(initialState.count);
 	const [displayItems, setDisplayItems] = useState(initialState.displayItems);
 
-	useEffect(() => {console.log('componentDidMount')}, []);
-	useEffect(() => {console.log('componintDidUpdate')}, [items]);
+	// useEffect(() => {console.log('componentDidMount')}, []);
+	// useEffect(() => {console.log('componintDidUpdate')}, [items]);
 	
 
 	const onClickDone = id => {
