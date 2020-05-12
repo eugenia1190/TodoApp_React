@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import ItemList from '../ItemList/ItemList';
 import InputItem from '../InputItem/InputItem';
 import styles from './Todo.module.css';
+import classnames from 'classnames';
 
 const Todo = () => {
 	const initialState = {
@@ -61,10 +62,34 @@ const Todo = () => {
 		<div className = {styles.wrap} >
 			<div className = {styles.menu}>
 				<Header />
-				<div>
-					<button className = {styles.btn} onClick = {() => setDisplayItems('isDone')} >Завершенные <span className = {styles.count}>{countIsDone}</span></button>
-					<button className = {styles.btn} onClick = {() => setDisplayItems('isNotDone')} >Незавершенные <span className = {styles.count}>{count - countIsDone}</span></button>
-					<button className = {styles.btn} onClick = {() => setDisplayItems('all')}>Все <span className = {styles.count}>{count}</span></button>
+				<div className = {styles.btnContainer}>
+					<button className = {
+						classnames({
+							[styles.btn]: true,
+							[styles.btnSelected]: (displayItems === 'isDone'),
+						})} onClick = {() => setDisplayItems('isDone')} >Завершенные <span className = {
+						classnames({
+							[styles.count]: true,
+							[styles.countSelected]: (displayItems === 'isDone'),
+						})}>{countIsDone}</span></button>
+					<button className = {
+						classnames({
+							[styles.btn]: true,
+							[styles.btnSelected]: (displayItems === 'isNotDone'),
+						})} onClick = {() => setDisplayItems('isNotDone')} >Незавершенные <span className = {
+						classnames({
+							[styles.count]: true,
+							[styles.countSelected]: (displayItems === 'isNotDone'),
+						})}>{count - countIsDone}</span></button>
+					<button className = {
+						classnames({
+							[styles.btn]: true,
+							[styles.btnSelected]: (displayItems === 'all'),
+						})} onClick = {() => setDisplayItems('all')}>Все <span className = {
+						classnames({
+							[styles.count]: true,
+							[styles.countSelected]: (displayItems === 'all'),
+						})}>{count}</span></button>
 				</div>
 			</div>
 
