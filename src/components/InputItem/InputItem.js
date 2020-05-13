@@ -18,18 +18,24 @@ class InputItem extends React.Component {
 
 		if ( this.state.inputValue === ''){
 			this.setState ({
-			labelValue: "Вы не ввели значение!",
-			noValue: true
-			
-		});
+				labelValue: "Вы не ввели значение!",
+				noValue: true
+			});
+
+			setTimeout(() => {
+				this.setState ({
+					labelValue: "Добавить задачу",
+					noValue: false
+				});
+			}, 1000);
+
 		} else {
 			this.setState ({
-			labelValue: "Добавить задачу",
-			noValue: false
-			
-		});
+				labelValue: "Добавить задачу",
+				noValue: false
+			});
 
-		this.props.onClickAdd(this.state.inputValue);
+			this.props.onClickAdd(this.state.inputValue);
 		}
 	}
 
@@ -43,7 +49,7 @@ class InputItem extends React.Component {
 					className = {
 						classnames({
 							[styles.input]: true,
-							[styles.error]: this.state.noValue
+							[styles.error]: this.state.noValue,
 						})}
 					placeholder={this.state.labelValue}
 					value={this.state.inputValue}
