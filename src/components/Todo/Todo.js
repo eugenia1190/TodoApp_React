@@ -8,8 +8,8 @@ import classnames from 'classnames';
 
 const Todo = () => {
 	const initialState = {
-		items: [],
-		count: 0,
+		items: (JSON.parse(localStorage.getItem('items')) || []),
+		count: (JSON.parse(localStorage.getItem('count')) || 0),
 		displayItems: 'all',
 	};
 
@@ -29,6 +29,7 @@ const Todo = () => {
 		});
 
 		setItems(newItemList);
+		localStorage.setItem('items', JSON.stringify(newItemList));
 	}
 
 	const onClickDelete = id => {
@@ -36,6 +37,8 @@ const Todo = () => {
 
 		setItems(newItemList);
 		setCount(count => count - 1);
+		localStorage.setItem('items', JSON.stringify(newItemList));
+		localStorage.setItem('count', JSON.stringify(count - 1));
 	}
 
 	const onClickAdd = value =>  {
@@ -49,6 +52,8 @@ const Todo = () => {
 		];
 		setItems(newItemList);
 		setCount(count => count + 1);
+		localStorage.setItem('items', JSON.stringify(newItemList));
+		localStorage.setItem('count', JSON.stringify(count + 1));
 	}
 
 	const itemsIsDone = items.filter(item => item.isDone === true);
@@ -57,7 +62,7 @@ const Todo = () => {
 	let selectedItems = (displayItems ==='isDone') ? itemsIsDone : (displayItems === 'isNotDone') ? itemsIsNotDone : itemsAll;		
 
 	const countIsDone =  items.filter(item => item.isDone === true).length;
-		
+
 	return (
 		<div className = {styles.wrap} >
 			<div className = {styles.menu}>
