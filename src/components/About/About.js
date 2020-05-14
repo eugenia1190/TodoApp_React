@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Octokit from '@octokit/rest';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import styles from './About.module.css';
 import Contacts from '../Contacts/Contacts.js';
 import Repo from '../Repo/Repo.js'
@@ -49,7 +50,9 @@ const About = () => {
 
 
 	return(
-		<div className = {styles.wrap} >
+		<div  className = {styles.wrap}>{isLoading && !notFound && <div className={styles.loading}><CircularProgress /></div>}
+		{!isLoading && !notFound &&
+		<div >
 			<Contacts 
 				bio={bio}
 				avatar={avatar}
@@ -59,7 +62,9 @@ const About = () => {
 				repoList = {repoList}
 				notFound = {notFound}
 			/>
-		</div>)
+		</div>}
+		</div>
+	)
 }
 
 export default About;
