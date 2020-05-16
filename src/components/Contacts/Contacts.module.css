@@ -2,6 +2,8 @@
 {
     display: flex;
 
+     position: relative;
+
     height: 174px;
     width: calc(100% - 26px);
     margin: 0 0 14px 0;
@@ -31,7 +33,17 @@
     font-weight: bold;
 }
 
-.socials
+.bio
+{
+    font-size: 14px;
+    line-height: 115%;
+
+    margin: 0 0 25px 0;
+
+    color: #999;
+}
+
+.contacts
 {
     font-size: 12px;
     line-height: 115%;
@@ -45,7 +57,7 @@
     align-items: center;
 }
 
-.icon
+.contactsIcon
 {
     width: 16px;
     height: 16px;
@@ -57,4 +69,37 @@
     text-decoration: none;
 
     color: #999;
+
+    cursor: pointer;
 }
+
+.link:hover
+{
+    text-decoration: underline;
+    
+    color: #356eff;
+}
+
+.socials
+{
+
+    display: flex;
+
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+
+    width: 56px;
+
+    color: #999;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.socialsIcon
+{
+    width: 24px;
+    height: 24px;
+}
+

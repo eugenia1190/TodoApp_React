@@ -14,6 +14,7 @@ const About = () => {
 	const initialState = {
 		isLoading: true,
 		notFound: false,
+		name:[],
 		bio: [],
 		avatar: [],
 		repoList: [],
@@ -24,6 +25,7 @@ const About = () => {
 	const [bio, setBio] = useState(initialState.bio);
 	const [avatar, setAvatar] = useState(initialState.avatar);
 	const [repoList, setRepoList] = useState(initialState.repoList);
+	const [name, setName] = useState(initialState.name);
 
 	useEffect(() => {
 		const user = 'eugenia1190';
@@ -32,8 +34,9 @@ const About = () => {
 		fetch(url)
 			.then (res => res.json())
 			.then (json => {
+				setName(json.name);
 				setBio(json.bio);
-				setAvatar(json.avatar_url)
+				setAvatar(json.avatar_url);
 			});
 
 		octokit.repos.listForUser({
@@ -66,6 +69,7 @@ const About = () => {
 			{!isLoading && !notFound &&
 			<div>
 				<Contacts 
+					name={name}
 					bio={bio}
 					avatar={avatar}
 				/>
