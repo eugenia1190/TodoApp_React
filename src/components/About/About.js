@@ -4,8 +4,8 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import styles from './About.module.css';
 import classnames from 'classnames';
 import Contacts from '../Contacts/Contacts.js';
-import Repo from '../Repo/Repo.js'
-import ErrorImg from '../../img/error.png'
+import Repo from '../Repo/Repo.js';
+import ErrorImg from '../../img/error.png';
 
 const octokit = new Octokit();
 

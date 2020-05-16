@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import Header from '../Header/Header';
 import ItemList from '../ItemList/ItemList';
 import InputItem from '../InputItem/InputItem';
+import ErrorImg from '../../img/error.png';
 import styles from './Todo.module.css';
 import classnames from 'classnames';
 
@@ -102,6 +103,12 @@ const Todo = () => {
 						})}>{count}</span></button>
 				</div>
 			</div>
+			{count === 0 &&
+			<div className={styles.container}>
+				<img src={ErrorImg} alt='error' className={styles.error} />
+				<p className = {styles.subtitle}>Вы ещё не добавили ни одной задачи</p>
+				<p className = {styles.text}>Сделайте это прямо сейчас!</p>
+			</div>}
 
 			<ItemList 
 				items= {selectedItems}
