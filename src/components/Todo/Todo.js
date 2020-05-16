@@ -42,18 +42,23 @@ const Todo = () => {
 	}
 
 	const onClickAdd = value =>  {
-		const newItemList = [
-			...items,
-			{
-				value,
-				isDone: false,
-				id: count + 1
-			}
-		];
-		setItems(newItemList);
-		setCount(count => count + 1);
-		localStorage.setItem('items', JSON.stringify(newItemList));
-		localStorage.setItem('count', JSON.stringify(count + 1));
+		
+		if (items.some((item)=>( value === item.value))) {
+			return 'error';
+		} else {
+			const newItemList = [
+				...items,
+				{
+					value,
+					isDone: false,
+					id: count + 1
+				}
+			];
+			setItems(newItemList);
+			setCount(count => count + 1);
+			localStorage.setItem('items', JSON.stringify(newItemList));
+			localStorage.setItem('count', JSON.stringify(count + 1));
+		}
 	}
 
 	const itemsIsDone = items.filter(item => item.isDone === true);

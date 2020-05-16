@@ -3,17 +3,20 @@ import classnames from 'classnames';
 import styles from './InputItem.module.css';
 
 import AddIcon from '../../img/add.png';
+import Tooltip from '../Tooltip/Tooltip.js';
 
 class InputItem extends React.Component {
 	state = {
 		inputValue: '',
 		labelValue: "Добавить задачу",
-		noValue: false
+		noValue: false,
+		error: false,
 	};
 
 	onButtonClick = () => {
 		this.setState ({
-			inputValue: ''
+			inputValue: '',
+			error: false,
 		});
 
 		if ( this.state.inputValue === ''){
@@ -21,21 +24,13 @@ class InputItem extends React.Component {
 				labelValue: "Вы не ввели значение!",
 				noValue: true
 			});
-
-			setTimeout(() => {
-				this.setState ({
-					labelValue: "Добавить задачу",
-					noValue: false
-				});
-			}, 1000);
-
 		} else {
 			this.setState ({
 				labelValue: "Добавить задачу",
 				noValue: false
 			});
 
-			this.props.onClickAdd(this.state.inputValue);
+			this.props.onClickAdd(this.state.inputValue) === 'error' &&	this.setState({error: true});
 		}
 	}
 
@@ -45,18 +40,20 @@ class InputItem extends React.Component {
 
 		return (
 			<div className = {styles.wrap}>
+				{this.state.error === true && <Tooltip />}
 				<input 
 					className = {
 						classnames({
 							[styles.input]: true,
-							[styles.error]: this.state.noValue,
+							[styles.error]: this.state.noValue || this.state.error,
 						})}
 					placeholder={this.state.labelValue}
 					value={this.state.inputValue}
-					onChange={event => this.setState({ inputValue: event.target.value })}
+					onChange={event => this.setState({ inputValue: event.target.value, noValue: false, error: false })}
 					onKeyUp={this.onClickEnter}/>
 				<div><img src = {AddIcon} alt = 'add' className={styles.addicon} onClick={ this.onButtonClick } /></div>
-			</div>);
+			</div>
+		);
 	}
 }
 
