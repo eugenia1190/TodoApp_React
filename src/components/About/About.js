@@ -18,6 +18,7 @@ const About = () => {
 		bio: [],
 		avatar: [],
 		repoList: [],
+		page: 0,
 	}
 
 	const [isLoading, setIsLoading] = useState(initialState.isLoading);
@@ -26,6 +27,7 @@ const About = () => {
 	const [avatar, setAvatar] = useState(initialState.avatar);
 	const [repoList, setRepoList] = useState(initialState.repoList);
 	const [name, setName] = useState(initialState.name);
+	const [page, setPage] = useState(initialState.page);
 
 	useEffect(() => {
 		const user = 'eugenia1190';
@@ -53,6 +55,18 @@ const About = () => {
 
 	}, []);
 
+	const reposOnPage = 4;
+	const countOfPage = Math.ceil(repoList.length / reposOnPage);
+
+	const displayRepo = () => {
+		const startRepo = page * reposOnPage;
+		const newRepoList = repoList.slice(startRepo,(startRepo + reposOnPage));
+		return newRepoList
+	}
+
+	const buttonClickForward = () => {	page < countOfPage && setPage(page + 1)	}
+
+	const buttonClickBack = () => {	page !== 0 && setPage(page - 1) }
 
 	return(
 		<div  className = {styles.wrap}>
@@ -75,8 +89,10 @@ const About = () => {
 				/>
 				<Repo 
 					isLoading = {isLoading}
-					repoList = {repoList}
+					repoList = {displayRepo()}
 					notFound = {notFound}
+					buttonClickForward = {buttonClickForward}
+					buttonClickBack = {buttonClickBack}
 				/>
 			</div>}
 		</div>
