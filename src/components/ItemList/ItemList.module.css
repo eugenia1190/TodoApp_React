@@ -1,7 +1,10 @@
 .itemlist
 {
-    margin-left: 0;
+    height: 465px;
+    margin: 0 0 15px 0;
     padding: 0 0 0 0;
+
+    overflow-y: scroll;
 }
 
 .item

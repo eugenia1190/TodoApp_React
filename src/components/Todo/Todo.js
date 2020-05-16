@@ -109,12 +109,12 @@ const Todo = () => {
 				<p className = {styles.subtitle}>Вы ещё не добавили ни одной задачи</p>
 				<p className = {styles.text}>Сделайте это прямо сейчас!</p>
 			</div>}
-
+			{count !==0 &&
 			<ItemList 
 				items= {selectedItems}
 				onClickDone={onClickDone}
 				onClickDelete ={onClickDelete}
-			/> 
+			/> }
 			<InputItem onClickAdd={onClickAdd} />
 		</div>
 	);
