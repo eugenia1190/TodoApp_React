@@ -2,6 +2,9 @@ body
 {
     font-family: Roboto, Arial, sans-serif;
 
+    display: flex;
+    justify-content: center;
+
     margin: 0;
     padding: 90px 0 0 0;
 
@@ -9,13 +12,6 @@ body
 }
 
 .wrap
-{
-    display: flex;
-
-    justify-content: center;
-}
-
-.wrapper
 {
     display: flex;
     flex-direction: column;
@@ -56,7 +52,7 @@ body
     background-color: #dcdcdc;
 }
 
-.active
+.btnActive
 {
 	color: #FFF;
 	background: #356EFF;
@@ -72,4 +68,10 @@ body
     padding: 0 30px 24px 30px;
 
     justify-content: space-between;
+}
+
+.content
+{
+    height: 644px;    
+    width: 700px;
 }

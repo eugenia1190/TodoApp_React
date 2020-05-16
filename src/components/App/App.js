@@ -20,27 +20,25 @@ const App = () => {
 
 return(<Router>
 	<div className={styles.wrap}>
-		<div className={styles.wrapper}>
-			<div className={styles.sidebar}>
-				<Link to='/' className={styles.link}><button 
-					className={ 
-						classnames({
-							[styles.btn] : true,
-							[styles.active] : (display === 'about'),
-						})}
-					onClick = {() => setDisplay('about')}>Обо мне</button></Link>
-				<Link to='/todo' className={styles.link}><button
-					className={
-						classnames({
-							[styles.btn] : true,
-							[styles.active] : (display === 'todo'),
-						})}
-					onClick={() => setDisplay('todo')}>Мои задачи</button></Link>
-			</div>
-			<div>
-				<Route path='/' exact component={About} />
-				<Route path='/todo' component={Todo} />
-			</div>
+		<div className={styles.sidebar}>
+			<Link to='/' className={styles.link}><button 
+				className={ 
+					classnames({
+						[styles.btn] : true,
+						[styles.btnActive] : (display === 'about'),
+					})}
+				onClick = {() => setDisplay('about')}>Обо мне</button></Link>
+			<Link to='/todo' className={styles.link}><button
+				className={
+					classnames({
+						[styles.btn] : true,
+						[styles.btnActive] : (display === 'todo'),
+					})}
+				onClick={() => setDisplay('todo')}>Мои задачи</button></Link>
+		</div>
+		<div className={styles.content}>
+			<Route path='/' exact component={About} />
+			<Route path='/todo' component={Todo} />
 		</div>
 	</div>
 </Router>)}

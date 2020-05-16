@@ -2,8 +2,10 @@ import React, {useState, useEffect} from 'react';
 import Octokit from '@octokit/rest';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import styles from './About.module.css';
+import classnames from 'classnames';
 import Contacts from '../Contacts/Contacts.js';
 import Repo from '../Repo/Repo.js'
+import ErrorImg from '../../img/error.png'
 
 const octokit = new Octokit();
 
@@ -39,7 +41,7 @@ const About = () => {
 		})
 		.then(({ data }) => {
 				setRepoList(data);
-				setIsLoading(false)
+				setIsLoading(false);
 		})
 		.catch(() => {
 				setNotFound(true);
@@ -50,19 +52,29 @@ const About = () => {
 
 
 	return(
-		<div  className = {styles.wrap}>{isLoading && !notFound && <div className={styles.loading}><CircularProgress /></div>}
-		{!isLoading && !notFound &&
-		<div >
-			<Contacts 
-				bio={bio}
-				avatar={avatar}
-			/>
-			<Repo 
-				isLoading = {isLoading}
-				repoList = {repoList}
-				notFound = {notFound}
-			/>
-		</div>}
+		<div  className = {styles.wrap}>
+			{isLoading && !notFound && <div className={styles.container}><CircularProgress /></div>}
+			{!isLoading && notFound && 
+			<div className={styles.container}>
+				<img src = {ErrorImg} alt='error' className={styles.error} />
+				<p className = {styles.subtitle}>Что-то пошло не так...</p>
+				<p className = {styles.text}>Попробуйте <span onClick = {() => window.location.reload()} className = {
+			 		classnames({
+			 			[styles.text]: true,
+			 			[styles.link]: true,})}>загрузить</span> еще раз</p>
+			</div>}
+			{!isLoading && !notFound &&
+			<div>
+				<Contacts 
+					bio={bio}
+					avatar={avatar}
+				/>
+				<Repo 
+					isLoading = {isLoading}
+					repoList = {repoList}
+					notFound = {notFound}
+				/>
+			</div>}
 		</div>
 	)
 }

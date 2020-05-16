@@ -14,17 +14,7 @@ const Repo = ( { isLoading, repoList, notFound } ) => {
 						[styles.content]: true,
 						[styles.norepo]: (!isLoading && notFound) || (isLoading && !notFound),
 					})}>
-				{isLoading && !notFound && <CircularProgress />}
-				{!isLoading && notFound && 
-					<div>
-						<img src = {ErrorImg} alt='error' className={styles.error} />
-						<p className = {styles.subtitle}>Что-то пошло не так...</p>
-						<p className = {styles.text}>Попробуйте <span onClick = {() => window.location.reload()} className = {
-							classnames({
-								[styles.text]: true,
-								[styles.link]: true,})}>загрузить</span> еще раз</p>
-					</div>}
-				{!isLoading && !notFound &&
+				
 				<div>
 					<ul className = {styles.list}>
 						{repoList.map(repo => (
@@ -41,7 +31,7 @@ const Repo = ( { isLoading, repoList, notFound } ) => {
 							</li>
 						))}
 					</ul> 
-				</div>} 
+				</div> 
 			</div>
 		</div>
 	);
