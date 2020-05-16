@@ -40,6 +40,7 @@ return(<Router>
 			<Route path='/' exact component={About} />
 			<Route path='/todo' component={Todo} />
 		</div>
+		<div>Выполнено в <a href='//webheroschool.ru' className={styles.link}>Web Hero School</a></div>
 	</div>
 </Router>)}
 

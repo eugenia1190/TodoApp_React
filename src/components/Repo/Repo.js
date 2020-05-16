@@ -14,6 +14,7 @@ const Repo = ( { isLoading, repoList, notFound } ) => {
 					})}>
 				
 				<div>
+					{repoList.length === 0 && 'Репозитории отстуствуют'}
 					<ul className = {styles.list}>
 						{repoList.map(repo => (
 							<li key={repo.id}>

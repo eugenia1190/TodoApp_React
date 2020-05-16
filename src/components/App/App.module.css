@@ -74,4 +74,21 @@ body
 {
     height: 644px;    
     width: 700px;
+    padding: 0 0 24px 0;
+}
+
+.link
+{
+    text-decoration: none;
+
+    color: #000;
+
+    cursor: pointer;
+}
+
+.link:hover
+{
+    text-decoration: underline;
+    
+    color: #356eff;
 }
