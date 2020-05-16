@@ -2,8 +2,6 @@ import React from 'react';
 import styles from './Repo.module.css';
 import classnames from 'classnames';
 import RepoItem from '../RepoItem/RepoItem.js';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import ErrorImg from '../../img/error.png'
 
 const Repo = ( { isLoading, repoList, notFound } ) => {
 	return (
