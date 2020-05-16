@@ -2,11 +2,12 @@ import React from 'react';
 import styles from './Repo.module.css';
 import classnames from 'classnames';
 import RepoItem from '../RepoItem/RepoItem.js';
+import ErrorImg from '../../img/error.png';
 
 const Repo = ( { isLoading, repoList, notFound } ) => {
 	return (
 		<div className = {styles.wrap}>
-			<h2 className = {styles.title}>Репозитории на <a href='https://github.com/' className = {styles.link}>github.com</a></h2>
+			<h2 className = {styles.title}>Репозитории на <a href='//github.com/' className = {styles.link}>github.com</a></h2>
 			<div className = {
 					classnames({
 						[styles.content]: true,
@@ -14,7 +15,12 @@ const Repo = ( { isLoading, repoList, notFound } ) => {
 					})}>
 				
 				<div>
-					{repoList.length === 0 && 'Репозитории отстуствуют'}
+					{repoList.length === 0 && 
+					<div className={styles.container}>
+						<img src={ErrorImg} alt='error' className={styles.error} />
+						<p className = {styles.subtitle}>Репозитории отсутствуют</p>
+						<p className = {styles.text}>Добавьте как минимум один репозиторий на <a href='//github.com' className = {styles.subtitleLink}>github.com</a></p>
+					</div>}
 					<ul className = {styles.list}>
 						{repoList.map(repo => (
 							<li key={repo.id}>
