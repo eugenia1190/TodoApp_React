@@ -1,15 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './Footer.module.css';
 
-const Footer = ({ count, onClickFooter }) => (<div className={styles.footer}>Невыполненные задачи: {count}</div>);
-
-Footer.defaultProps = {
-	count: 0
-};
-
-Footer.propTypes = {
-	count: PropTypes.number.isRequired
-};
+const Footer = () => (<div className = {styles.footer}>Выполнено в <a href='//webheroschool.ru' className={styles.link}>Web Hero School</a></div>);
 
 export default Footer;

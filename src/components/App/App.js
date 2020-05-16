@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import Todo from '../Todo/Todo';
 import About from '../About/About';
+import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 import classnames from 'classnames';
 import '../../fonts/fonts.css';
@@ -40,7 +41,7 @@ return(<Router>
 			<Route path='/' exact component={About} />
 			<Route path='/todo' component={Todo} />
 		</div>
-		<div>Выполнено в <a href='//webheroschool.ru' className={styles.link}>Web Hero School</a></div>
+		<Footer />
 	</div>
 </Router>)}
 
