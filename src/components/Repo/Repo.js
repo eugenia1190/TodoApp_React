@@ -20,7 +20,8 @@ const Repo = ( { isLoading, repoList, notFound } ) => {
 								<RepoItem 
 									value = {repo.name}
 									homepage = {repo.homepage}
-									repoUrl = {repo.html_url} 
+									repoUrl = {repo.html_url}
+									description = {repo.description} 
 									language = {repo.language}
 									stargazers = {repo.stargazers_count}
 									forks = {repo.forks_count}
