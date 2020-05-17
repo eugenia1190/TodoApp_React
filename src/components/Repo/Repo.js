@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import RepoItem from '../RepoItem/RepoItem.js';
 import ErrorImg from '../../img/error.png';
 
-const Repo = ( { isLoading, repoList, notFound, buttonClickForward, buttonClickBack } ) => {
+const Repo = ( { isLoading, repoList, notFound, buttonClickForward, buttonClickBack, page, countOfPage } ) => {
 	return (
 		<div className = {styles.wrap}>
 			<h2 className = {styles.title}>Репозитории на <a href='//github.com/' className = {styles.link}>github.com</a></h2>
@@ -34,8 +34,20 @@ const Repo = ( { isLoading, repoList, notFound, buttonClickForward, buttonClickB
 					</ul> 
 				</div> 
 				<div className={styles.btnWrap}>
-					<button className={styles.btn} onClick={buttonClickBack}>Назад</button>
-					<button className={styles.btn} onClick={buttonClickForward}>Далее</button>
+					<button
+						className={
+							classnames({
+								[styles.btn]: true,
+								[styles.btnBlocked]: (page === 0),
+							})} 
+						onClick={buttonClickBack}>Назад</button>
+					<button
+						className={
+							classnames({
+								[styles.btn]: true,
+								[styles.btnBlocked]: (page === countOfPage),
+							})} 
+						onClick={buttonClickForward}>Далее</button>
 				</div>
 			
 		</div>

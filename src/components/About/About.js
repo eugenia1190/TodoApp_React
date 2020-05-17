@@ -56,7 +56,7 @@ const About = () => {
 	}, []);
 
 	const reposOnPage = 4;
-	const countOfPage = Math.ceil(repoList.length / reposOnPage);
+	const countOfPage = Math.floor(repoList.length / reposOnPage);
 
 	const displayRepo = () => {
 		const startRepo = page * reposOnPage;
@@ -93,6 +93,8 @@ const About = () => {
 					notFound = {notFound}
 					buttonClickForward = {buttonClickForward}
 					buttonClickBack = {buttonClickBack}
+					page = {page}
+					countOfPage = {countOfPage}
 				/>
 			</div>}
 		</div>
