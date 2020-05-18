@@ -6,26 +6,22 @@ import Checkbox from '@material-ui/core/Checkbox';
 import DeleteIcon from '../../img/delete.png';
 import IconButton from '@material-ui/core/IconButton';
 
-class Item extends React.Component {
-
-	render () {
-
-		const { value, isDone, id, onClickDone, onClickDelete } = this.props;
-
-		return (<span className= {
-		classnames({
-			[styles.item]: true,
-			[styles.done]: isDone,
+const Item = ({ value, isDone, id, onClickDone, onClickDelete }) => {
+	return (
+		<span className={
+			classnames({
+				[styles.item]: true,
+				[styles.done]: isDone,
 		})}>
-		<Checkbox checked= {isDone} onClick= {() => onClickDone(id)} />
-		{value}
-		<div className={styles.delete}>
-			<IconButton onClick= {() => onClickDelete(id)}>
-          		<img src = {DeleteIcon} alt = 'delete' className={styles.deleteicon}  />
-        	</IconButton>
-        </div>
-    </span>);
-	}
+			<Checkbox checked={isDone} onClick={() => onClickDone(id)} />
+			{value}
+			<div className={styles.delete}>
+				<IconButton onClick={() => onClickDelete(id)}>
+   			     		<img src ={DeleteIcon} alt ='delete' className={styles.deleteicon}  />
+   			   	</IconButton>
+   			</div>
+   		</span>
+   	)
 }
 
 

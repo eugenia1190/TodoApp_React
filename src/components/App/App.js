@@ -4,11 +4,9 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import Todo from '../Todo/Todo';
 import About from '../About/About';
 import Footer from '../Footer/Footer';
+
 import styles from './App.module.css';
 import '../../fonts/fonts.css';
-
-
-
 
 const App = () => {
 
