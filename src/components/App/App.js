@@ -14,7 +14,7 @@ const App = () => {
 
 return(<Router>
 	<div className={styles.wrap}>
-		<nav className={styles.sidebar}>
+		<nav className={styles.nav}>
 			<NavLink exact to='/'
 				className={styles.link}
 				activeClassName={styles.linkActive}>Обо мне</NavLink>
