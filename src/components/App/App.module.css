@@ -24,35 +24,34 @@ body
 
 .link
 {
-    text-decoration: none;
-
-    color: black;
-}
-
-.btn
-{
-    font-family: Roboto, Arial, sans-serif;
     font-size: 16px;
+
+    display: flex;
 
     width: 128px;
     height: 44px;
 
     cursor: pointer;
 
+    text-decoration: none;
+
     color: #000;
     border: none;
     border-radius: 37px;
     outline: none;
+
+    align-items: center;
+    justify-content: center;
 }
 
-.btn:hover
+.link:hover
 {
     transition: background  .3s ease-in-out;
 
     background-color: #dcdcdc;
 }
 
-.btnActive
+.linkActive
 {
 	color: #FFF;
 	background: #356EFF;
@@ -75,20 +74,4 @@ body
     height: 644px;    
     width: 700px;
     padding: 0 0 24px 0;
-}
-
-.link
-{
-    text-decoration: none;
-
-    color: #000;
-
-    cursor: pointer;
-}
-
-.link:hover
-{
-    text-decoration: underline;
-    
-    color: #356eff;
 }
