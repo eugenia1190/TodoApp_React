@@ -1,8 +1,8 @@
 .itemlist
 {
-    height: 465px;
-    margin: 0 0 15px 0;
-    padding: 0 0 0 0;
+    height: 425px;
+    margin: 0 0 43px 0;
+    padding: 0;
 
     overflow-y: scroll;
 }
@@ -11,7 +11,28 @@
 {
     display: flex;
 
+    margin-right: 4px;
     padding: 0 0 8px 0;
 
     list-style-type: none;
+}
+
+/*styles for scroll*/
+
+.itemlist::-webkit-scrollbar-track
+{
+    border-radius: 6px;
+    background-color: #FFF;
+}
+
+.itemlist::-webkit-scrollbar
+{
+    width: 4px;
+    background-color: #FFF;
+}
+
+.itemlist::-webkit-scrollbar-thumb
+{
+    border-radius: 6px;
+    background-color: #CCC;
 }
