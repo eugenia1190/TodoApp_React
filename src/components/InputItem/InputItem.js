@@ -5,7 +5,6 @@ import styles from './InputItem.module.css';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import IconButton from '@material-ui/core/IconButton';
 
-// import AddIcon from '../../img/add.png';
 import Tooltip from '../Tooltip/Tooltip.js';
 
 const InputItem = ({onClickAdd}) => {
@@ -51,13 +50,9 @@ const InputItem = ({onClickAdd}) => {
 				value={inputValue}
 				onChange={event => { setInputValue(event.target.value); setNoValue(false); setError(false)}}
 				onKeyUp={onClickEnter}/>
-			<div> <IconButton size="small"  onClick={onButtonClick}><AddCircleIcon color="primary" fontSize="large" /></IconButton></div>
+			<IconButton size="small"  onClick={onButtonClick}><AddCircleIcon color="primary" fontSize="large" /></IconButton>
 		</div>
 	)
-	
 }
 
 export default InputItem;
-
-
-// <img src = {AddIcon} alt = 'add' className={styles.addicon} onClick={ onButtonClick } />
