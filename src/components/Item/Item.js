@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import classnames from 'classnames';
 import styles from './Item.module.css';
+
 import Checkbox from '@material-ui/core/Checkbox';
-import DeleteIcon from '../../img/delete.png';
+import CancelSharpIcon from '@material-ui/icons/CancelSharp';
+import RadioButtonUncheckedSharpIcon from '@material-ui/icons/RadioButtonUncheckedSharp';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import IconButton from '@material-ui/core/IconButton';
 
 const Item = ({ value, isDone, id, onClickDone, onClickDelete }) => {
@@ -13,12 +17,19 @@ const Item = ({ value, isDone, id, onClickDone, onClickDelete }) => {
 				[styles.item]: true,
 				[styles.done]: isDone,
 		})}>
-			<Checkbox checked={isDone} onClick={() => onClickDone(id)} />
+			
+			<Checkbox
+            	icon={<RadioButtonUncheckedSharpIcon fontSize="small" />}
+            	checkedIcon={<CheckCircleIcon fontSize="small" />}
+               	color="primary"
+             	checked={isDone}
+              	onClick={() => onClickDone(id)}
+          	/>
 			{value}
 			<div className={styles.delete}>
-				<IconButton onClick={() => onClickDelete(id)}>
-   			     		<img src ={DeleteIcon} alt ='delete' className={styles.deleteicon}  />
-   			   	</IconButton>
+   			    <IconButton  onClick={() => onClickDelete(id)}>
+   			    	<CancelSharpIcon fontSize="small" />
+   			    </IconButton>
    			</div>
    		</span>
    	)
