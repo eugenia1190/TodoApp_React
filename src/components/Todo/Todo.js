@@ -52,7 +52,8 @@ const Todo = () => {
 				{
 					value,
 					isDone: false,
-					id: count + 1
+					isEdited: false,
+					id: count + 1,
 				}
 			];
 			setItems(newItemList);
@@ -60,6 +61,38 @@ const Todo = () => {
 			localStorage.setItem('items', JSON.stringify(newItemList));
 			localStorage.setItem('count', JSON.stringify(count + 1));
 		}
+	}
+
+	const onItemDoubleClick = (value, id, event) => {
+
+		const newItemList = items.map(item => {
+				
+				const newItem = { ...item};
+	
+				if (item.id === id) { newItem.isEdited = !newItem.isEdited }
+	
+				return newItem;
+			});
+		
+		setItems(newItemList);
+
+	}
+
+
+	const changeItem = (value, id) => {
+		const newItemList = items.map(item => {
+				const newItem = { ...item};
+	
+				if (item.id === id) {
+					newItem.value = value;
+					newItem.isEdited = !newItem.isEdited
+				}
+	
+				return newItem;
+			});
+
+		setItems(newItemList);
+		localStorage.setItem('items', JSON.stringify(newItemList));
 	}
 
 	const itemsIsDone = items.filter(item => item.isDone === true);
@@ -114,6 +147,8 @@ const Todo = () => {
 				items= {selectedItems}
 				onClickDone={onClickDone}
 				onClickDelete ={onClickDelete}
+				onItemDoubleClick={onItemDoubleClick}
+				changeItem={changeItem}
 			/> }
 			<InputItem onClickAdd={onClickAdd} />
 		</div>

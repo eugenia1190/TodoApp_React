@@ -10,9 +10,11 @@ import RadioButtonUncheckedSharpIcon from '@material-ui/icons/RadioButtonUncheck
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import IconButton from '@material-ui/core/IconButton';
 
-const Item = ({ value, isDone, id, onClickDone, onClickDelete }) => {
+import EditedItem from '../EditedItem/EditedItem.js';
+
+const Item = ({ value, isDone, id, onClickDone, onClickDelete, onItemDoubleClick, isEdited, changeItem}) => {
 	return (
-		<span className={
+		<div className={
 			classnames({
 				[styles.item]: true,
 				[styles.done]: isDone,
@@ -25,13 +27,15 @@ const Item = ({ value, isDone, id, onClickDone, onClickDelete }) => {
              	checked={isDone}
               	onClick={() => onClickDone(id)}
           	/>
-			{value}
+          	<div className={styles.value} onDoubleClick={(event) => onItemDoubleClick(value, id, event)}>
+          	{!isEdited ? value : <EditedItem  value={value} changeItem={changeItem} id={id} />}
+          	</div>		
 			<div className={styles.delete}>
    			    <IconButton  onClick={() => onClickDelete(id)}>
    			    	<CancelSharpIcon fontSize="small" />
    			    </IconButton>
    			</div>
-   		</span>
+   		</div>
    	)
 }
 

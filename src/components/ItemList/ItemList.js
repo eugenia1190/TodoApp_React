@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Item from '../Item/Item';
 import styles from './ItemList.module.css';
 
-const ItemList = ({ items, onClickDone, onClickDelete }) => (
+const ItemList = ({ items, onClickDone, onClickDelete, onItemDoubleClick, changeItem }) => (
 	<ul className={styles.itemlist}>
 	{items.map(item =><li className={styles.item} key={item.id}> 
 		<Item 
@@ -13,6 +13,9 @@ const ItemList = ({ items, onClickDone, onClickDelete }) => (
 			id={item.id}
 			onClickDone ={onClickDone}
 			onClickDelete={onClickDelete}
+			onItemDoubleClick={onItemDoubleClick}
+			isEdited={item.isEdited}
+			changeItem={changeItem}
 		/> 
 		</li>)}
 	</ul>);
