@@ -6,7 +6,7 @@
     position: absolute;
     bottom: 35px;
 
-    width: 242px;
+    max-width: 242px;
     padding: 8px;
 
     text-align: left;

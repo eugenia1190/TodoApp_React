@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './Tooltip.module.css';
 
-const Tooltip = () => (
+const Tooltip = ({noValue}) => (
 	<div>
-		<p className={styles.tooltip}>Такая задача уже есть в вашем<br />списке. Введите другое название</p>
+		<p className={styles.tooltip}>{noValue ? 'Вы не ввели значение!' : 'Такая задача уже есть в вашем списке. Введите другое название'}</p>
 	</div>
 );
 

@@ -26,10 +26,9 @@ const InputItem = ({onClickAdd}) => {
 		setError(false);
 
 		if ( inputValue === ''){
-			setLabelValue('Вы не ввели значение!');
 			setNoValue(true);
+			setError(true);
 		} else {
-			setLabelValue('Добавить задачу');
 			setNoValue(false);
 			onClickAdd(inputValue) === 'error' && setError(true);
 		}
@@ -39,7 +38,7 @@ const InputItem = ({onClickAdd}) => {
 
 	return (
 		<div className = {styles.wrap}>
-			{error === true && <Tooltip />}
+			{error === true && <Tooltip noValue={noValue} />}
 			<input 
 				className = {
 					classnames({
