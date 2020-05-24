@@ -44,7 +44,7 @@ const Todo = () => {
 
 	const onClickAdd = value =>  {
 		
-		if (items.some((item)=>( value === item.value))) {
+		if (items.some((item)=>( value.toLowerCase() === item.value.toLowerCase()))) {
 			return 'error';
 		} else {
 			const newItemList = [
