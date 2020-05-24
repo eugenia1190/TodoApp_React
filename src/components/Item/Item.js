@@ -18,6 +18,7 @@ const Item = ({ value, isDone, id, onClickDone, onClickDelete, onItemDoubleClick
 			classnames({
 				[styles.item]: true,
 				[styles.done]: isDone,
+                [styles.editedItem]: isEdited,
 		})}>
 			{!isEdited && 
                 <Checkbox
