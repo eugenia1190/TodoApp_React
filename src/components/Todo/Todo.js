@@ -85,7 +85,7 @@ const Todo = () => {
 	
 				if (item.id === id) {
 					newItem.value = value;
-					newItem.isEdited = !newItem.isEdited
+					newItem.isEdited = !newItem.isEdited;
 				}
 	
 				return newItem;

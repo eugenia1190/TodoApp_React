@@ -7,11 +7,14 @@ const EditedItem = ({value, id, changeItem}) => {
 
 const initialState = {
 	inputValue: value,
+	previousValue: value,
 }
 
 const [inputValue, setInputValue] = useState(initialState.inputValue);
+const [previousValue] = useState(initialState.previousValue);
+
 const onClickEdit = (event) => {
-	if (event.keyCode === 13 && inputValue!== '')  {changeItem(inputValue, id)} 
+	inputValue === '' ?  changeItem(previousValue, id) : changeItem(inputValue, id) 
 };
 
 
@@ -23,9 +26,10 @@ return(
 		value={inputValue} 
 		className={styles.input}
 		onChange={event => {setInputValue(event.target.value)}}
-		onKeyUp={onClickEdit}
+		onKeyUp={event => event.keyCode === 13 && onClickEdit(event)}
+		onBlur={onClickEdit}
 	/>
-	<IconButton onClick={event => changeItem(inputValue, id)}><LoopIcon  fontSize="small" color="primary" /></IconButton>
+	<IconButton onClick={onClickEdit}><LoopIcon  fontSize="small" color="primary" /></IconButton>
 	</div>
 
 
