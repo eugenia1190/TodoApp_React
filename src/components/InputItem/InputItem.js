@@ -16,7 +16,7 @@ const InputItem = ({onClickAdd}) => {
 	};
 
 	const [inputValue, setInputValue] = useState(initialState.inputValue);
-	const [labelValue, setLabelValue] = useState(initialState.labelValue);
+	const [labelValue] = useState(initialState.labelValue);
 	const [noValue, setNoValue] = useState(initialState.setNoValue);
 	const [error, setError] = useState(initialState.setError);
 
