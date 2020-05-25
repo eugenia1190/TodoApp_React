@@ -3,3 +3,14 @@
     font-size: 28px;
     font-weight: bold;
 }
+
+@media (max-width: 340px)
+{
+    .title
+    {
+		font-size: 24px;
+
+		margin: 10px 0;
+    }
+}
+

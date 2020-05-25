@@ -37,7 +37,7 @@ const InputItem = ({onClickAdd}) => {
 	const onClickEnter = (event) => { if (event.keyCode === 13) {onButtonClick()} };
 
 	return (
-		<div className = {styles.wrap}>
+		<div className={styles.wrap}>
 			{error === true && <Tooltip noValue={noValue} />}
 			<input 
 				className = {
@@ -49,7 +49,7 @@ const InputItem = ({onClickAdd}) => {
 				value={inputValue}
 				onChange={event => { setInputValue(event.target.value); setNoValue(false); setError(false)}}
 				onKeyUp={onClickEnter}/>
-			<IconButton size="small"  onClick={onButtonClick}><AddCircleIcon color="primary" fontSize="large" /></IconButton>
+			<IconButton size='small'  onClick={onButtonClick}><AddCircleIcon color='primary' fontSize='large' /></IconButton>
 		</div>
 	)
 }

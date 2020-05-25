@@ -2,10 +2,10 @@
 {
     display: flex;
 
-     position: relative;
+    position: relative;
 
-    height: 174px;
-    width: calc(100% - 26px);
+    height: 27%;
+    width: 100%;
     margin: 0 0 14px 0;
     padding: 12px;
 
@@ -13,6 +13,7 @@
     border-radius: 9px;
     background-color: #fff;
     box-shadow: 0 0 3px rgba(0, 0, 0, .25);
+    box-sizing: border-box;
 }
 
 .avatar
@@ -20,7 +21,7 @@
     display: flex;
 
     width: auto;
-    height: 176px;
+    height: 100%;
     margin: 0 40px  0 0;
 
     border-radius: 9px;
@@ -31,6 +32,8 @@
 {
     font-size: 28px;
     font-weight: bold;
+
+    margin: 0 0 5px 0;
 }
 
 .bio
@@ -38,7 +41,7 @@
     font-size: 14px;
     line-height: 115%;
 
-    margin: 0 0 25px 0;
+    margin: 0 0 10px 0;
 
     color: #999;
 }
@@ -103,3 +106,49 @@
     height: 24px;
 }
 
+@media (max-width: 340px)
+{
+    .avatar
+    {
+        margin: 0 20px  0 0;
+    }
+
+    .title
+    {
+        font-size: 16px;
+    }
+
+    .bio
+    {
+        font-size: 10px;
+    }
+
+    .contacts
+    {
+        font-size: 9px;
+    
+        margin: 0 0 5px 0;
+    }
+    
+    .contactsIcon
+    {
+        width: 10px;
+        height: 10px;
+        padding: 0 4px  0 0;
+    }
+
+    .socials
+    { 
+        bottom: 10px;
+        right: 12px;
+    
+        width: 42px;
+    }
+
+    .socialsIcon
+    {
+        width: 18px;
+        height: 18px;
+    }
+    
+}

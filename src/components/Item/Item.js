@@ -20,20 +20,20 @@ const Item = ({ value, isDone, id, onClickDone, onClickDelete, onItemDoubleClick
 				[styles.done]: isDone,
                 [styles.editedItem]: isEdited,
 		})}>
-			{!isEdited && 
-                <Checkbox
-                    icon={<RadioButtonUncheckedSharpIcon fontSize="small" />}
-                    checkedIcon={<CheckCircleIcon fontSize="small" />}
-                    color="primary"
-                    checked={isDone}
-                    onClick={() => onClickDone(id)}
-                />}
+			{!isEdited && <Checkbox
+                icon={<RadioButtonUncheckedSharpIcon fontSize='small' />}
+                checkedIcon={<CheckCircleIcon fontSize='small' />}
+                color='primary'
+                checked={isDone}
+                onClick={() => onClickDone(id)}
+            />}
           	<div className={styles.value} onDoubleClick={(event) => onItemDoubleClick(value, id, event)}>
-          	    {!isEdited ? value : <EditedItem  value={value} changeItem={changeItem} id={id} />}
+          	    {!isEdited && value }
+                {isEdited && <EditedItem  value={value} changeItem={changeItem} id={id} />}
           	</div>		
 			{!isEdited && <div className={styles.delete}>
                 <IconButton  onClick={() => onClickDelete(id)}>
-                    <CancelSharpIcon fontSize="small" />
+                    <CancelSharpIcon fontSize='small' />
                 </IconButton>
             </div>}
    		</div>

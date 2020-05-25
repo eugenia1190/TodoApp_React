@@ -43,11 +43,11 @@ const RepoItem = ({repoUrl, homepage, value, description, language, stargazers, 
 					})}>
 				</div>{language}</div>
 			<div className={styles.parameter}>
-				<img src={Stargazers} alt="stargazers" className = {styles.icon} />
+				<img src={Stargazers} alt='stargazers' className = {styles.icon} />
 				<div>{stargazers}</div>
 			</div>
 			<div className={styles.parameter}>
-				<img src={Forks} alt="forks" className = {styles.icon} />
+				<img src={Forks} alt='forks' className = {styles.icon} />
 				<div>{forks}</div>
 			</div>
 			<div>Updated on {transformDate(update)}</div>

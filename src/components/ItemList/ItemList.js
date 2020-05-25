@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import Item from '../Item/Item';
 import styles from './ItemList.module.css';
 
@@ -11,10 +12,10 @@ const ItemList = ({ items, onClickDone, onClickDelete, onItemDoubleClick, change
 			isClicked={item.isClicked}
 			isDone={item.isDone}
 			id={item.id}
+			isEdited={item.isEdited}			
 			onClickDone ={onClickDone}
 			onClickDelete={onClickDelete}
 			onItemDoubleClick={onItemDoubleClick}
-			isEdited={item.isEdited}
 			changeItem={changeItem}
 		/> 
 		</li>)}
@@ -23,7 +24,7 @@ const ItemList = ({ items, onClickDone, onClickDelete, onItemDoubleClick, change
 ItemList.defaultProps = {
 	items: [
 		{
-			value: "Несуществующая задача"
+			value: 'Несуществующая задача'
 		}]
 };
 

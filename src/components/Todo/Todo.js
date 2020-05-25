@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
+import classnames from 'classnames';
 
 import Header from '../Header/Header';
 import ItemList from '../ItemList/ItemList';
 import InputItem from '../InputItem/InputItem';
 import ErrorImg from '../../img/error.png';
 import styles from './Todo.module.css';
-import classnames from 'classnames';
 
 const Todo = () => {
 	const initialState = {
@@ -156,5 +156,3 @@ const Todo = () => {
 }
 
 export default Todo;
-
-

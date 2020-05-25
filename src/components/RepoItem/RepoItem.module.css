@@ -114,3 +114,44 @@
 	height: 11px;
 	margin: 0 10px 0 0;
 }
+
+@media (max-width: 340px)
+{
+/*	.wrap
+	{
+	    margin: 0 0 8px 0;
+	    padding: 6px 12px 6px 12px;
+
+	}
+*/
+	.repo
+	{
+		font-size: 12px;
+		line-height: 14px;
+	}
+	
+	.demo
+	{
+		font-size: 8px;
+		line-height: 10px;
+	}
+	
+	.description,
+	.info
+	{
+		font-size: 10px;
+	    line-height: 12px;
+	}
+
+	.circle,
+	.icon
+	{
+		margin: 0 5px 0 0;
+	}
+
+	.parameter
+	{
+		margin: 0 10px 0 0;
+	}
+
+}

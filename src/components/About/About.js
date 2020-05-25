@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import Octokit from '@octokit/rest';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import styles from './About.module.css';
+
 import classnames from 'classnames';
+import Octokit from '@octokit/rest';
+
+import CircularProgress from '@material-ui/core/CircularProgress';
 import Contacts from '../Contacts/Contacts.js';
 import Repo from '../Repo/Repo.js';
+import styles from './About.module.css';
 import ErrorImg from '../../img/error.png';
 
 const octokit = new Octokit();
@@ -55,7 +57,7 @@ const About = () => {
 
 	}, []);
 
-	const reposOnPage = 4;
+	const reposOnPage = 3;
 	const countOfPage = Math.floor(repoList.length / reposOnPage);
 
 	const displayRepo = () => {
@@ -69,32 +71,32 @@ const About = () => {
 	const buttonClickBack = () => {	page !== 0 && setPage(page - 1) }
 
 	return(
-		<div  className = {styles.wrap}>
+		<div className = {styles.wrap}>
 			{isLoading && !notFound && <div className={styles.container}><CircularProgress /></div>}
 			{!isLoading && notFound && 
 			<div className={styles.container}>
 				<img src = {ErrorImg} alt='error' className={styles.error} />
-				<p className = {styles.subtitle}>Что-то пошло не так...</p>
-				<p className = {styles.text}>Попробуйте <span onClick = {() => window.location.reload()} className = {
+				<p className={styles.subtitle}>Что-то пошло не так...</p>
+				<p className={styles.text}>Попробуйте <span onClick={() => window.location.reload()} className={
 			 		classnames({
 			 			[styles.text]: true,
 			 			[styles.link]: true,})}>загрузить</span> еще раз</p>
 			</div>}
 			{!isLoading && !notFound &&
-			<div>
+			<div className={styles.contentContainer}>
 				<Contacts 
 					name={name}
 					bio={bio}
 					avatar={avatar}
 				/>
 				<Repo 
-					isLoading = {isLoading}
-					repoList = {displayRepo()}
-					notFound = {notFound}
-					buttonClickForward = {buttonClickForward}
-					buttonClickBack = {buttonClickBack}
-					page = {page}
-					countOfPage = {countOfPage}
+					isLoading={isLoading}
+					repoList={displayRepo()}
+					notFound={notFound}
+					buttonClickForward={buttonClickForward}
+					buttonClickBack={buttonClickBack}
+					page={page}
+					countOfPage={countOfPage}
 				/>
 			</div>}
 		</div>

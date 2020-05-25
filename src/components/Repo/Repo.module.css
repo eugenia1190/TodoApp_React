@@ -4,7 +4,8 @@
     flex-direction: column;
 
     padding: 30px;
-    height: 370px;
+    height: 73%;
+    width: 100%;
 
     align-items: center;
 
@@ -12,6 +13,7 @@
     border-radius: 9px;
     background-color: #fff;
     box-shadow: 0 0 3px rgba(0, 0, 0, .25);
+    box-sizing: border-box;
 }
 
 .title
@@ -70,7 +72,7 @@
     flex-direction: column;
 
     width: 100%;
-    min-height: 310px;
+    height: 100%;
 
     align-items: center;
 }
@@ -160,4 +162,18 @@
     cursor: default;
     
     background-color: #dcdcdc;
+}
+
+@media (max-width: 340px)
+{
+    .wrap
+    {
+        padding: 15px;
+    }
+
+    .title
+    {
+        font-size: 14px;
+        margin: 0;
+    }
 }
