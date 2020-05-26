@@ -111,7 +111,7 @@
     color: #999;
 }
 
-@media (max-width: 340px)
+@media (max-width: 375px)
 {
     .wrap
     {

@@ -164,7 +164,7 @@
     background-color: #dcdcdc;
 }
 
-@media (max-width: 340px)
+@media (max-width: 375px)
 {
     .wrap
     {

@@ -106,7 +106,7 @@
     height: 24px;
 }
 
-@media (max-width: 340px)
+@media (max-width: 375px)
 {
     .avatar
     {
