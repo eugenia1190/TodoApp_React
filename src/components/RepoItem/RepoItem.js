@@ -20,12 +20,12 @@ const transformDate = (prop) => {
 const RepoItem = ({repoUrl, homepage, value, description, language, stargazers, forks, update}) => (
 	<div className = {styles.wrap}>
 		<div className={styles.title}>
-			<a href={repoUrl} className = {
+			<a href={repoUrl} target='_blank' className = {
 				classnames({
 					[styles.link]: true,
 					[styles.repo]: true,
 			})}>{value}</a>
-			{homepage && <a href={homepage} className = {
+			{homepage && <a href={homepage} target='_blank' className = {
 				classnames({
 					[styles.link]: true,
 					[styles.demo]: true,
