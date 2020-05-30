@@ -12,6 +12,7 @@ const App = () => {
 
 return(<Router>
 	<div className={styles.wrap}>
+	<div className={styles.inner}>
 		<nav className={styles.nav}>
 			<NavLink exact to='/'
 				className={styles.link}
@@ -25,6 +26,7 @@ return(<Router>
 			<Route path='/todo' component={Todo} />
 		</div>
 		<Footer />
+	</div>
 	</div>
 </Router>)}
 

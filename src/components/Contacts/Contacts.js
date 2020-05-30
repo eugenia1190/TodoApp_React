@@ -10,7 +10,7 @@ import vkIcon from '../../img/vk.png';
 const Contacts = ({ name, bio, avatar }) => {
  	return(
  		<div className={styles.wrap}>
-			<img src = {avatar} alt = 'avatar' className = {styles.avatar}  />
+			<img src = {avatar} alt = 'avatar' className = {styles.avatar} />
 			<div>
 				<h1 className = {styles.title}>{name}</h1>
 				<p className = {styles.bio}> {bio} </p>

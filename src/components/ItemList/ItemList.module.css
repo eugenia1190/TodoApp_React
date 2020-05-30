@@ -1,6 +1,6 @@
 .itemlist
 {
-    height: 60%;
+    height: 70%;
     margin: 0 0 15px 0;
     padding: 0;
 
@@ -34,4 +34,12 @@
 {
     border-radius: 6px;
     background-color: #CCC;
+}
+
+@media (max-width: 540px)
+{
+    .itemlist
+    {
+        height: 60%;
+    }
 }

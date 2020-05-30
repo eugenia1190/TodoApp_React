@@ -1,7 +1,6 @@
 .wrap
 {
     display: flex;
-
     position: relative;
 
     height: 27%;
@@ -18,8 +17,6 @@
 
 .avatar
 {
-    display: flex;
-
     width: auto;
     height: 100%;
     margin: 0 40px  0 0;
@@ -106,9 +103,9 @@
     height: 24px;
 }
 
-@media (max-width: 375px)
+@media (max-width: 540px)
 {
-    .avatar
+     .avatar
     {
         margin: 0 20px  0 0;
     }
@@ -150,5 +147,4 @@
         width: 18px;
         height: 18px;
     }
-    
 }

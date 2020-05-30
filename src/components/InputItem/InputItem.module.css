@@ -2,9 +2,10 @@
 {
     display: flex;
 
-    position: relative;
+    position: absolute;
 
-    width: 100%;
+    width: calc(100% - 60px);
+    bottom: 20px;
 
     justify-content: space-between;
 }
@@ -26,4 +27,12 @@
 .error
 {
     border-color: red;
+}
+
+@media (max-width: 375px)
+{
+    .wrap
+    {
+        width: calc(100% - 30px);
+    }
 }
