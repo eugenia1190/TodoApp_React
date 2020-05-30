@@ -130,7 +130,7 @@
     
     position: absolute;
     width: 155px;
-    bottom: 30px;
+    bottom: 15px;
     
     justify-content: space-between;
 }
@@ -178,10 +178,5 @@
     {
         font-size: 14px;
         margin: 0;
-    }
-
-    .btnWrap
-    {
-        bottom: 15px;
     }
 }
