@@ -8,14 +8,14 @@ import ErrorImg from '../../img/error.png';
 const Repo = ( { isLoading, repoList, notFound, buttonClickForward, buttonClickBack, page, countOfPage } ) => {
 	return (
 		<div className = {styles.wrap}>
-			<h2 className = {styles.title}>Репозитории на <a href='//github.com/'  target='_blank' className = {styles.link}>github.com</a></h2>
+			<h2 className = {styles.title}>Репозитории на <a href='//github.com/'  target='_blank' rel='noopener noreferrer' className = {styles.link}>github.com</a></h2>
 			
 			<div className = {styles.content}>
 				{repoList.length === 0 && 
 				<div className={styles.container}>
 					<img src={ErrorImg} alt='error' className={styles.error} />
 					<p className = {styles.subtitle}>Репозитории отсутствуют</p>
-					<p className = {styles.text}>Добавьте как минимум один репозиторий на <a href='//github.com' target='_blank' className = {styles.subtitleLink}>github.com</a></p>
+					<p className = {styles.text}>Добавьте как минимум один репозиторий на <a href='//github.com' target='_blank' rel='noopener noreferrer' className = {styles.subtitleLink}>github.com</a></p>
 				</div>}
 				<ul className = {styles.list} id='fff'>
 					{repoList.map(repo => (

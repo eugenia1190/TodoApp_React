@@ -17,16 +17,16 @@ const Contacts = ({ name, bio, avatar }) => {
 				<div>
 					<div className = {styles.contacts} >
 						<img src = {mailIcon} alt = 'mail' className = {styles.contactsIcon} />
-						<a href='mailto:>eugenia1190@gmail.com' target='_blank' className = {styles.link}>eugenia1190@gmail.com</a>
+						<a href='mailto:>eugenia1190@gmail.com' target='_blank' rel='noopener noreferrer' className = {styles.link}>eugenia1190@gmail.com</a>
 					</div>
 					<div className = {styles.contacts} >
 						<img src = {telegramIcon} alt = 'telegram'  className = {styles.contactsIcon} />
-						<a href='https://tlgg.ru/eugenia1190' target='_blank' className = {styles.link}>+7 (982) 576-49-33</a>
+						<a href='https://tlgg.ru/eugenia1190' target='_blank' rel='noopener noreferrer' className = {styles.link}>+7 (982) 576-49-33</a>
 					</div>
 				</div>
 				<div className = {styles.socials}>
-					<a href='//github.com/eugenia1190' target='_blank'><img src={githubIcon} alt='github' className = {styles.socialsIcon} /></a>
-					<a href='//vk.com/chetvert' target='_blank'><img src={vkIcon} alt='vk' className = {styles.socialsIcon} /></a>
+					<a href='//github.com/eugenia1190' target='_blank' rel='noopener noreferrer'><img src={githubIcon} alt='github' className = {styles.socialsIcon} /></a>
+					<a href='//vk.com/chetvert' target='_blank' rel='noopener noreferrer'><img src={vkIcon} alt='vk' className = {styles.socialsIcon} /></a>
 				</div>
 			</div>
 		</div>
