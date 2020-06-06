@@ -12,14 +12,15 @@ import IconButton from '@material-ui/core/IconButton';
 
 import EditedItem from '../EditedItem/EditedItem.js';
 
-const Item = ({ value, isDone, id, onClickDone, onClickDelete, onItemDoubleClick, isEdited, changeItem}) => {
+const Item = ({ value, isDone, id, onClickDone, onClickDelete, onItemDoubleClick, isEdited, changeItem }) => {
 	return (
-		<div className={
-			classnames({
-				[styles.item]: true,
-				[styles.done]: isDone,
-                [styles.editedItem]: isEdited,
-		})}>
+		<div 
+            className={
+	       	  	classnames({
+	       	  		[styles.item]: true,
+	       	  		[styles.done]: isDone,
+                    [styles.editedItem]: isEdited,})}
+        >
 			{!isEdited && <Checkbox
                 icon={<RadioButtonUncheckedSharpIcon fontSize='small' />}
                 checkedIcon={<CheckCircleIcon fontSize='small' />}
@@ -28,7 +29,7 @@ const Item = ({ value, isDone, id, onClickDone, onClickDelete, onItemDoubleClick
                 onClick={() => onClickDone(id)}
             />}
           	<div className={styles.value} onDoubleClick={(event) => onItemDoubleClick(value, id, event)}>
-          	    {!isEdited && value }
+          	    { !isEdited && value }
                 {isEdited && <EditedItem  value={value} changeItem={changeItem} id={id} />}
           	</div>		
 			{!isEdited && <div className={styles.delete}>
@@ -48,7 +49,7 @@ Item.defaultProps = {
 Item.propTypes = {
 	value: PropTypes.string.isRequired,
 	isDone: PropTypes.bool.isRequired,
-	id: PropTypes.number.isRequired,
+	id: PropTypes.string.isRequired,
 	onClickDone: PropTypes.func,
 	onClickDelete: PropTypes.func
 };

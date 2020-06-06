@@ -1,11 +1,14 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import classnames from 'classnames';
+import { DragDropContext } from 'react-beautiful-dnd';
 
 import Header from '../Header/Header';
 import ItemList from '../ItemList/ItemList';
 import InputItem from '../InputItem/InputItem';
 import ErrorImg from '../../img/error.png';
 import styles from './Todo.module.css';
+
+const generateId = () => `id${Math.round(Math.random() * 1e8).toString(16)}`;
 
 const Todo = () => {
 	const initialState = {
@@ -53,7 +56,7 @@ const Todo = () => {
 					value,
 					isDone: false,
 					isEdited: false,
-					id: count + 1,
+					id: generateId(),
 				}
 			];
 			setItems(newItemList);
@@ -95,6 +98,21 @@ const Todo = () => {
 		localStorage.setItem('items', JSON.stringify(newItemList));
 	}
 
+	const onDragEnd = result => {
+		const { destination, source } = result;
+
+		if (!destination) {
+			return;
+		}
+
+		const newItemList = [...items];
+     	const [deletedItem] = newItemList.splice(source.index, 1);
+     	newItemList.splice(destination.index, 0, deletedItem);
+      	
+      	setItems([...newItemList]);
+      	localStorage.setItem('items', JSON.stringify(newItemList));
+	}
+
 	const itemsIsDone = items.filter(item => item.isDone === true);
 	const itemsIsNotDone = items.filter(item => item.isDone === false);
 	const itemsAll = items;
@@ -104,53 +122,58 @@ const Todo = () => {
 
 	return (
 		<div className = {styles.wrap} >
-			<div className = {styles.menu}>
-				<Header />
-				<div className = {styles.btnContainer}>
-					<button className = {
-						classnames({
-							[styles.btn]: true,
-							[styles.btnSelected]: (displayItems === 'isDone'),
-						})} onClick = {() => setDisplayItems('isDone')} >Завершенные <span className = {
-						classnames({
-							[styles.count]: true,
-							[styles.countSelected]: (displayItems === 'isDone'),
-						})}>{countIsDone}</span></button>
-					<button className = {
-						classnames({
-							[styles.btn]: true,
-							[styles.btnSelected]: (displayItems === 'isNotDone'),
-						})} onClick = {() => setDisplayItems('isNotDone')} >Незавершенные <span className = {
-						classnames({
-							[styles.count]: true,
-							[styles.countSelected]: (displayItems === 'isNotDone'),
-						})}>{count - countIsDone}</span></button>
-					<button className = {
-						classnames({
-							[styles.btn]: true,
-							[styles.btnSelected]: (displayItems === 'all'),
-						})} onClick = {() => setDisplayItems('all')}>Все <span className = {
-						classnames({
-							[styles.count]: true,
-							[styles.countSelected]: (displayItems === 'all'),
-						})}>{count}</span></button>
+			<DragDropContext onDragEnd={onDragEnd}>
+				<div className = {styles.menu}>
+					<Header />
+					
+					<div className = {styles.btnContainer}>
+						<button className = {
+							classnames({
+								[styles.btn]: true,
+								[styles.btnSelected]: (displayItems === 'isDone'),
+							})} onClick = {() => setDisplayItems('isDone')} >Завершенные <span className = {
+							classnames({
+								[styles.count]: true,
+								[styles.countSelected]: (displayItems === 'isDone'),
+							})}>{countIsDone}</span></button>
+						<button className = {
+							classnames({
+								[styles.btn]: true,
+								[styles.btnSelected]: (displayItems === 'isNotDone'),
+							})} onClick = {() => setDisplayItems('isNotDone')} >Незавершенные <span className = {
+							classnames({
+								[styles.count]: true,
+								[styles.countSelected]: (displayItems === 'isNotDone'),
+							})}>{count - countIsDone}</span></button>
+						<button className = {
+							classnames({
+								[styles.btn]: true,
+								[styles.btnSelected]: (displayItems === 'all'),
+							})} onClick = {() => setDisplayItems('all')}>Все <span className = {
+							classnames({
+								[styles.count]: true,
+								[styles.countSelected]: (displayItems === 'all'),
+							})}>{count}</span></button>
+					</div>
 				</div>
-			</div>
-			{count === 0 &&
-			<div className={styles.container}>
-				<img src={ErrorImg} alt='error' className={styles.error} />
-				<p className = {styles.subtitle}>Вы ещё не добавили ни одной задачи</p>
-				<p className = {styles.text}>Сделайте это прямо сейчас!</p>
-			</div>}
-			{count !==0 &&
-			<ItemList 
-				items= {selectedItems}
-				onClickDone={onClickDone}
-				onClickDelete ={onClickDelete}
-				onItemDoubleClick={onItemDoubleClick}
-				changeItem={changeItem}
-			/> }
-			<InputItem onClickAdd={onClickAdd} />
+				{count === 0 &&
+				<div className={styles.container}>
+					<img src={ErrorImg} alt='error' className={styles.error} />
+					<p className = {styles.subtitle}>Вы ещё не добавили ни одной задачи</p>
+					<p className = {styles.text}>Сделайте это прямо сейчас!</p>
+				</div>}
+				{count !==0 &&
+	
+					<ItemList 
+						items= {selectedItems}
+						onClickDone={onClickDone}
+						onClickDelete ={onClickDelete}
+						onItemDoubleClick={onItemDoubleClick}
+						changeItem={changeItem}
+					/>
+				}
+				<InputItem onClickAdd={onClickAdd} />
+			</DragDropContext>
 		</div>
 	);
 }
