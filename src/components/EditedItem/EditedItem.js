@@ -4,7 +4,7 @@ import styles from './EditedItem.module.css';
 import IconButton from '@material-ui/core/IconButton';
 import LoopIcon from '@material-ui/icons/Loop';
 
-const EditedItem = ({value, id, changeItem}) => {
+const EditedItem = ({value, id, changeItem, checkItems}) => {
 
 const initialState = {
 	inputValue: value,
@@ -15,7 +15,7 @@ const [inputValue, setInputValue] = useState(initialState.inputValue);
 const [previousValue] = useState(initialState.previousValue);
 
 const onClickEdit = event => {
-	inputValue === '' ?  changeItem(previousValue, id) : changeItem(inputValue, id) 
+	checkItems(inputValue) === 'error' ? changeItem(previousValue, id) : inputValue === '' ?  changeItem(previousValue, id) : changeItem(inputValue, id) 
 };
 
 	return(

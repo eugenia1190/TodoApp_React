@@ -6,7 +6,7 @@ import { Draggable} from 'react-beautiful-dnd';
 import Item from '../Item/Item';
 import styles from './ItemList.module.css';
 
-const ItemList = ({ items, onClickDone, onClickDelete, onItemDoubleClick, changeItem }) => (
+const ItemList = ({ items, onClickDone, onClickDelete, onItemDoubleClick, changeItem, checkItems }) => (
 	<Droppable droppableId={'itemlist'}>
 		{ provided => (
 			<ul 
@@ -37,6 +37,7 @@ const ItemList = ({ items, onClickDone, onClickDelete, onItemDoubleClick, change
 									onClickDelete={onClickDelete}
 									onItemDoubleClick={onItemDoubleClick}
 									changeItem={changeItem}
+									checkItems={checkItems}
 								/> 
 							</li>
 						)}

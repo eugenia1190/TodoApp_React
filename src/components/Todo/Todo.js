@@ -171,6 +171,7 @@ const Todo = () => {
 						onClickDelete ={onClickDelete}
 						onItemDoubleClick={onItemDoubleClick}
 						changeItem={changeItem}
+						checkItems={checkItems}
 					/>
 				}
 				<InputItem onClickAdd={onClickAdd} checkItems={checkItems} />

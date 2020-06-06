@@ -22,7 +22,6 @@ const InputItem = ({onClickAdd, checkItems}) => {
 
 
 	const onButtonClick = () => {
-		
 		if (checkItems(inputValue) === 'error') {
 			setError(true)
 		} else if ( inputValue === '') {
@@ -33,24 +32,6 @@ const InputItem = ({onClickAdd, checkItems}) => {
 			setError(false);
 			onClickAdd(inputValue);
 		}
-
-
-
-
-
-		// setInputValue('');
-		// setError(false);
-		// console.log(inputValue);
-
-		// if ( inputValue === ''){
-
-		// 	setNoValue(true);
-		// 	setError(true);
-		// } else {
-
-		// 	setNoValue(false);
-		// 	onClickAdd(inputValue) === 'error' && setError(true);
-		// }
 	}
 
 	const onClickEnter = (event) => { if (event.keyCode === 13) {onButtonClick()} };

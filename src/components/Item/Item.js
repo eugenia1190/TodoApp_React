@@ -12,7 +12,7 @@ import IconButton from '@material-ui/core/IconButton';
 
 import EditedItem from '../EditedItem/EditedItem.js';
 
-const Item = ({ value, isDone, id, onClickDone, onClickDelete, onItemDoubleClick, isEdited, changeItem }) => {
+const Item = ({ value, isDone, id, onClickDone, onClickDelete, onItemDoubleClick, isEdited, changeItem, checkItems }) => {
 	return (
 		<div 
             className={
@@ -30,7 +30,7 @@ const Item = ({ value, isDone, id, onClickDone, onClickDelete, onItemDoubleClick
             />}
           	<div className={styles.value} onDoubleClick={(event) => onItemDoubleClick(value, id, event)}>
           	    { !isEdited && value }
-                {isEdited && <EditedItem  value={value} changeItem={changeItem} id={id} />}
+                {isEdited && <EditedItem  value={value} changeItem={changeItem} checkItems={checkItems} id={id} />}
           	</div>		
 			{!isEdited && <div className={styles.delete}>
                 <IconButton  onClick={() => onClickDelete(id)}>
