@@ -46,23 +46,24 @@ const Todo = () => {
 	}
 
 	const onClickAdd = value =>  {
-		
+		const newItemList = [
+			...items,
+			{
+				value,
+				isDone: false,
+				isEdited: false,
+				id: generateId(),
+			}
+		];
+		setItems(newItemList);
+		setCount(count => count + 1);
+		localStorage.setItem('items', JSON.stringify(newItemList));
+		localStorage.setItem('count', JSON.stringify(count + 1));
+	}
+
+	const checkItems = value => {
 		if (items.some((item)=>( value.toLowerCase() === item.value.toLowerCase()))) {
 			return 'error';
-		} else {
-			const newItemList = [
-				...items,
-				{
-					value,
-					isDone: false,
-					isEdited: false,
-					id: generateId(),
-				}
-			];
-			setItems(newItemList);
-			setCount(count => count + 1);
-			localStorage.setItem('items', JSON.stringify(newItemList));
-			localStorage.setItem('count', JSON.stringify(count + 1));
 		}
 	}
 
@@ -172,7 +173,7 @@ const Todo = () => {
 						changeItem={changeItem}
 					/>
 				}
-				<InputItem onClickAdd={onClickAdd} />
+				<InputItem onClickAdd={onClickAdd} checkItems={checkItems} />
 			</DragDropContext>
 		</div>
 	);

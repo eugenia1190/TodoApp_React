@@ -7,7 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 
 import Tooltip from '../Tooltip/Tooltip.js';
 
-const InputItem = ({onClickAdd}) => {
+const InputItem = ({onClickAdd, checkItems}) => {
 	const initialState = {
 		inputValue: '',
 		labelValue: 'Добавить задачу',
@@ -22,16 +22,35 @@ const InputItem = ({onClickAdd}) => {
 
 
 	const onButtonClick = () => {
-		setInputValue('');
-		setError(false);
-
-		if ( inputValue === ''){
+		
+		if (checkItems(inputValue) === 'error') {
+			setError(true)
+		} else if ( inputValue === '') {
 			setNoValue(true);
 			setError(true);
 		} else {
-			setNoValue(false);
-			onClickAdd(inputValue) === 'error' && setError(true);
+			setInputValue('');
+			setError(false);
+			onClickAdd(inputValue);
 		}
+
+
+
+
+
+		// setInputValue('');
+		// setError(false);
+		// console.log(inputValue);
+
+		// if ( inputValue === ''){
+
+		// 	setNoValue(true);
+		// 	setError(true);
+		// } else {
+
+		// 	setNoValue(false);
+		// 	onClickAdd(inputValue) === 'error' && setError(true);
+		// }
 	}
 
 	const onClickEnter = (event) => { if (event.keyCode === 13) {onButtonClick()} };
