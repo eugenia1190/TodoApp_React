@@ -66,7 +66,7 @@ const About = () => {
 		return newRepoList
 	}
 
-	const buttonClickForward = () => {	page < countOfPage && setPage(page + 1)	}
+	const buttonClickForward = () => {	page < (countOfPage - 1) && setPage(page + 1) }
 
 	const buttonClickBack = () => {	page !== 0 && setPage(page - 1) }
 
