@@ -6,7 +6,6 @@ import RepoItem from '../RepoItem/RepoItem.js';
 import ErrorImg from '../../img/error.png';
 
 const Repo = ( { isLoading, repoList, notFound, buttonClickForward, buttonClickBack, page, countOfPage } ) => {
-	console.log(page);
 	return (
 		<div className = {styles.wrap}>
 			<h2 className = {styles.title}>Репозитории на <a href='//github.com/'  target='_blank' rel='noopener noreferrer' className = {styles.link}>github.com</a></h2>
@@ -18,7 +17,7 @@ const Repo = ( { isLoading, repoList, notFound, buttonClickForward, buttonClickB
 					<p className = {styles.subtitle}>Репозитории отсутствуют</p>
 					<p className = {styles.text}>Добавьте как минимум один репозиторий на <a href='//github.com' target='_blank' rel='noopener noreferrer' className = {styles.subtitleLink}>github.com</a></p>
 				</div>}
-				<ul className = {styles.list} id='fff'>
+				<ul className = {styles.list}>
 					{repoList.map(repo => (
 						<li key={repo.id}>
 							<RepoItem 

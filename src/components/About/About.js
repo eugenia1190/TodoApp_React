@@ -58,15 +58,15 @@ const About = () => {
 	}, []);
 
 	const reposOnPage = 3;
-	const countOfPage = Math.floor(repoList.length / reposOnPage);
+	const countOfPage = Math.ceil(repoList.length / reposOnPage);
 
 	const displayRepo = () => {
 		const startRepo = page * reposOnPage;
 		const newRepoList = repoList.slice(startRepo,(startRepo + reposOnPage));
-		return newRepoList
+		return newRepoList;
 	}
 
-	const buttonClickForward = () => {	page < (countOfPage - 1) && setPage(page + 1) }
+	const buttonClickForward = () => {	page < countOfPage - 1 && setPage(page + 1) }
 
 	const buttonClickBack = () => {	page !== 0 && setPage(page - 1) }
 
