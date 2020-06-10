@@ -1,0 +1,151 @@
+.wrap
+{
+    margin: 0 0 8px 0;
+    padding: 6px 12px 6px 12px;
+    height: 64px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.title
+{
+	display: flex;
+}
+
+.link
+{
+	display: block;
+	
+    text-decoration: none;
+
+    color: #000;
+}
+
+.repo
+{
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: bold;
+
+	margin: 0 5px 0 0;
+}
+
+.repo:hover
+{
+    text-decoration: underline;
+    
+    color: #356eff;
+}
+
+.demo
+{
+	font-size: 10px;
+	line-height: 14px;
+}
+
+.demo:hover
+{
+	color: #999;
+}
+
+.description
+{
+	font-size: 12px;
+    line-height: 14px;
+
+    color: #999;
+}
+
+.info
+{
+    font-size: 12px;
+    line-height: 14px;
+
+    display: flex;
+
+    color: #999;
+
+    align-items: center;
+}
+
+.parameter
+{
+	display: flex;
+
+	margin: 0 15px 0 0;
+
+	align-items: center;
+}
+
+.circle
+{
+	width: 11px;
+	height: 11px;
+	margin: 0 10px 0 0;
+	
+	border-radius: 50%;
+}
+
+.html
+{
+	background-color: #e34c26;
+}
+
+.css
+{
+	background-color: #563d7c;	
+}
+
+.js
+{
+	background-color: #f1e05a;	
+}
+
+.icon
+{
+	width: auto;
+	height: 11px;
+	margin: 0 10px 0 0;
+}
+
+@media (max-width: 540px)
+{
+
+	.repo
+	{
+		font-size: 12px;
+		line-height: 14px;
+	}
+	
+	.demo
+	{
+		font-size: 8px;
+		line-height: 10px;
+	}
+	
+	.description,
+	.info
+	{
+		font-size: 10px;
+	    line-height: 12px;
+	}
+
+	.circle,
+	.icon
+	{
+		margin: 0 5px 0 0;
+	}
+
+	.parameter
+	{
+		margin: 0 10px 0 0;
+	}
+
+}

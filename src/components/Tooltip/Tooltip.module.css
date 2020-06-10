@@ -1,0 +1,29 @@
+.tooltip
+{
+    font-size: 14px;
+    line-height: 16px;
+
+    position: absolute;
+    bottom: 35px;
+
+    max-width: 242px;
+    padding: 8px;
+
+    text-align: left;
+
+    color: #fff;
+    border-radius: 6px;
+    background: #356eff;
+}
+
+.tooltip::after
+{
+    position: absolute;
+    top: 100%;
+    left: 12px;
+
+    content: '';
+
+    border: 8px solid transparent;
+    border-top-color: #356eff;
+}

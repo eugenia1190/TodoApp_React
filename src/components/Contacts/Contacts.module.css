@@ -1,0 +1,155 @@
+.wrap
+{
+    display: flex;
+    position: relative;
+
+    height: 27%;
+    width: 100%;
+    margin: 0 0 14px 0;
+    padding: 12px;
+
+    border: 1px solid #fff;
+    border-radius: 9px;
+    background-color: #fff;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .25);
+    box-sizing: border-box;
+}
+
+.avatar
+{
+    width: auto;
+    height: 100%;
+    margin: 0 40px  0 0;
+
+    border-radius: 9px;
+    overflow: hidden;
+}
+
+.title
+{
+    font-size: 28px;
+    font-weight: bold;
+
+    margin: 0 0 5px 0;
+}
+
+.bio
+{
+    font-size: 14px;
+    line-height: 115%;
+
+    margin: 0 0 10px 0;
+
+    color: #999;
+}
+
+.contacts
+{
+    font-size: 12px;
+    line-height: 115%;
+
+    display: flex;
+
+    margin: 0 0 9px 0;
+
+    color: #999;
+
+    align-items: center;
+}
+
+.contactsIcon
+{
+    width: 16px;
+    height: 16px;
+    padding: 0 4px  0 0;
+}
+
+.link
+{
+    text-decoration: none;
+
+    color: #999;
+
+    cursor: pointer;
+}
+
+.link:hover
+{
+    text-decoration: underline;
+    
+    color: #356eff;
+}
+
+.socials
+{
+
+    display: flex;
+
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+
+    width: 56px;
+
+    color: #999;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.socialsIcon
+{
+    width: 24px;
+    height: 24px;
+}
+
+.socialsIcon:hover
+{
+    opacity: 0.5;
+}
+
+@media (max-width: 540px)
+{
+     .avatar
+    {
+        margin: 0 20px  0 0;
+    }
+
+    .title
+    {
+        font-size: 16px;
+    }
+
+    .bio
+    {
+        font-size: 10px;
+    }
+
+    .contacts
+    {
+        font-size: 9px;
+    
+        margin: 0 0 5px 0;
+    }
+    
+    .contactsIcon
+    {
+        width: 10px;
+        height: 10px;
+        padding: 0 4px  0 0;
+    }
+
+    .socials
+    { 
+        bottom: 10px;
+        right: 12px;
+    
+        width: 42px;
+    }
+
+    .socialsIcon
+    {
+        width: 18px;
+        height: 18px;
+    }
+}

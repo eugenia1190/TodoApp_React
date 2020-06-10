@@ -1,0 +1,38 @@
+.wrap
+{
+    display: flex;
+
+    position: absolute;
+
+    width: calc(100% - 60px);
+    bottom: 20px;
+
+    justify-content: space-between;
+}
+
+.input
+{
+    width: 90%;
+    padding: 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 29px;
+}
+
+.input:focus
+{
+    outline: 0;
+}
+
+.error
+{
+    border-color: red;
+}
+
+@media (max-width: 375px)
+{
+    .wrap
+    {
+        width: calc(100% - 30px);
+    }
+}

@@ -1,0 +1,45 @@
+.item
+{
+    font-size: 14px;
+    line-height: 16px;
+
+    display: flex;
+
+    width: 100%;
+    padding: 3px 0;
+
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 41px;
+    box-sizing: border-box;
+
+    align-items: center;
+}
+
+.editedItem
+{
+    border-color: #356eff;
+}
+
+.done
+{
+    text-decoration: line-through;
+
+    color: #757575;
+}
+
+.clicked
+{
+    border: 1px solid #356EFF;
+}
+
+.value
+{
+    display: flex;
+   
+    height: 100%;
+    width: 100%;
+
+    align-items: center;
+}

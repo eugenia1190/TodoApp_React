@@ -1,0 +1,45 @@
+.itemlist
+{
+    height: 70%;
+    margin: 0 0 15px 0;
+    padding: 0;
+
+    overflow-y: scroll;
+}
+
+.item
+{
+    display: flex;
+
+    padding: 0 0 8px 0;
+
+    list-style-type: none;
+}
+
+/*styles for scroll*/
+
+.itemlist::-webkit-scrollbar-track
+{
+    border-radius: 6px;
+    background-color: #FFF;
+}
+
+.itemlist::-webkit-scrollbar
+{
+    width: 4px;
+    background-color: #FFF;
+}
+
+.itemlist::-webkit-scrollbar-thumb
+{
+    border-radius: 6px;
+    background-color: #CCC;
+}
+
+@media (max-width: 540px)
+{
+    .itemlist
+    {
+        height: 60%;
+    }
+}
